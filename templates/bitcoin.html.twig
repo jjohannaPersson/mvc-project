@@ -1,0 +1,26 @@
+{{ include('header.html.twig') }}
+
+<h1>{{ header }}</h1>
+
+<div class="info">
+    <p>{{ message }}</p>
+
+    <p>{{ info }}</p>
+</div>
+
+<div class="bitcoins">
+
+    <h2>Antal bitcoins:</h2>
+
+    <h3>Datorn: {{ bitcoins["computer"] }}</h3>
+
+    <h3>Du: {{ bitcoins["human"] }}</h3>
+
+</div>
+
+<form class="bitcoin-form" action="" method="POST">
+    <input type="number" name="bitcoin" id="bitcoin" min="1" max="{{bitcoins["human"] / 2}}">
+    <input name="bet" id="bet" type="submit" value="SATSA">
+</form>
+
+{{ include('footer.html.twig') }}
