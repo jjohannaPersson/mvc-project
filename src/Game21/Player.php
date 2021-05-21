@@ -14,10 +14,31 @@ class Player
     private $hand;
     private $score = 0;
     private $wonRounds = 0;
+    private $currBitcoins;
 
     public function __construct(int $dices)
     {
         $this->hand = new DiceHand($dices);
+    }
+
+    public function bitcoins($bitcoins)
+    {
+        $this->currBitcoins = $bitcoins;
+
+    }
+
+    public function addBitcoins($bitcoins)
+    {
+        $this->currBitcoins += $bitcoins;
+
+        return $this->currBitcoins;
+    }
+
+    public function removeBitcoins($bitcoins)
+    {
+        $this->currBitcoins -= $bitcoins;
+
+        return $this->currBitcoins;
     }
 
     public function roll()
@@ -64,5 +85,10 @@ class Player
     public function getWonRounds()
     {
         return $this->wonRounds;
+    }
+
+    public function getBitcoins()
+    {
+        return $this->currBitcoins;
     }
 }

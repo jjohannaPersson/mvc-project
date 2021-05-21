@@ -39,6 +39,32 @@ class Game21Controller extends AbstractController
             $session->set('game', new Game21($dices));
         }
 
+        return $this->redirectToRoute('bitcoin');
+    }
+
+    public function bitcoin(): Response
+    {
+        $session = $this->get('session');
+        $game21 = $session->get('game');
+
+        return $this->render('bitcoin.html.twig', [
+            "header" => "Game 21",
+            "message" => "Välj hur många bitcoins du vill satsa, du kan som max satsa hälften av ditt innehav.",
+            "info" => "Om du vinner mot datorn så vinner du det dubbla som du har satsat. T.ex. om du satsar 5 bitcoins och vinner, då vinner du 20 bitcoins.",
+            "bitcoins" => $game21->getBitcoins(),
+        ]);
+    }
+
+    public function bitcoinpost(): Response
+    {
+        $session = $this->get('session');
+        $game21 = $session->get('game');
+
+        if (array_key_exists("bitcoin", $_POST)) {
+            $bitcoin = intval($_POST["bitcoin"]);
+            $game21->betBitcoins($bitcoin);
+        }
+
         return $this->redirectToRoute('play21');
     }
 
@@ -58,7 +84,8 @@ class Game21Controller extends AbstractController
             "class" => $game21->graphicDice(),
             "wonRounds" => $game21->getWonRounds(),
             "winner" => $game21->getWinner(),
-            "roundIsOver" => $game21->roundIsOver()
+            "roundIsOver" => $game21->roundIsOver(),
+            "betBitcoins" => $game21->getBetBitcoins(),
         ]);
     }
 
@@ -82,7 +109,7 @@ class Game21Controller extends AbstractController
             return $this->redirectToRoute('play21');
         } elseif (array_key_exists("play-again", $_POST)) {
             $game21->resetScores();
-            return $this->redirectToRoute('play21');
+            return $this->redirectToRoute('bitcoin');
         } elseif (array_key_exists("new-game", $_POST)) {
             return $this->redirectToRoute('game21');
         };
