@@ -1,0 +1,123 @@
+body {
+    overflow-y: scroll;
+    background-color: #EBCDAB;
+    margin: 0 auto;
+}
+
+main {
+    min-height: 20em;
+    width: 800px;
+    margin: 8px auto;
+    padding-bottom: 4em;
+}
+
+.navbar {
+    background-color: #6E857F;
+    padding: 1em;
+    text-align: center;
+}
+
+.navbar a {
+    text-decoration: none;
+    padding: 10px;
+    color: #EBCDAB;
+}
+
+.navbar a:hover {
+    text-decoration: underline;
+}
+
+h1 {
+    text-align: center;
+}
+
+.dice-sprite {
+    display: inline-block;
+    padding: 0;
+    margin: 0 4px 0 0;
+    width: 32px;
+    height: 32px;
+    background: url(../dice-faces.jpg) no-repeat;
+}
+
+.dice-sprite.dice-0 { background: none;}
+.dice-sprite.dice-1 { background-position: -160px 0; }
+.dice-sprite.dice-2 { background-position: -128px 0; }
+.dice-sprite.dice-3 { background-position: -96px 0; }
+.dice-sprite.dice-4 { background-position: -64px 0; }
+.dice-sprite.dice-5 { background-position: -32px 0; }
+.dice-sprite.dice-6 { background-position: 0 0; }
+
+.possible-scores {
+    padding-top: 1em;
+}
+
+label {
+    padding-right: 1em;
+}
+
+.dices [type="checkbox" i] {
+    display: none;
+}
+
+input[type=checkbox]:checked + label i {
+    border: 2px solid #6E857F;
+}
+
+input[type=submit] {
+    background-color: #6E857F;
+    color: #EBCDAB;
+    padding: 10px;
+    cursor: pointer;
+    margin-top: 5px;
+}
+
+.game-table {
+    border-collapse: collapse;
+    margin-top: 1em;
+    margin-bottom: 1em;
+}
+
+.game-table td, th {
+    border: 2px solid #6E857F;
+    padding: 8px;
+    width: 70px;
+}
+
+.book-table {
+    border-collapse: collapse;
+    margin-top: 1em;
+    margin-bottom: 1em;
+    margin: 0 auto;
+}
+
+.book-table td, th {
+    border: 1px solid #000;
+    padding: 8px;
+    width: 200px;
+    text-align: center;
+}
+
+.book-table th {
+    background-color: #6E857F;
+    color: #EBCDAB;
+}
+
+td a {
+    color: #6E857F;
+}
+
+td a:hover {
+    text-decoration: none;
+}
+
+.footer {
+    background-color: #6E857F;
+    color: #EBCDAB;
+    height: 4em;
+    text-align: center;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+}

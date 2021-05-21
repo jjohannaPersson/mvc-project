@@ -1,0 +1,36 @@
+#index:
+#    path: /
+#    controller: App\Controller\DefaultController::index
+
+hello:
+    path: /hello-world
+    controller: App\Controller\HelloWorldController::helloMessage
+
+hello-view:
+    path: /
+    controller: App\Controller\HelloWorldController::helloMessageView
+
+dice:
+    path: /dice
+    controller: App\Controller\DiceController::diceGame
+    methods: [GET]
+
+game21:
+    path: /game21
+    controller: App\Controller\Game21Controller::game21
+    methods: [GET]
+
+game21post:
+    path: /game21
+    controller: App\Controller\Game21Controller::game21post
+    methods: [POST]
+
+play21:
+    path: /play21
+    controller: App\Controller\Game21Controller::play21
+    methods: [GET]
+
+play21post:
+    path: /play21
+    controller: App\Controller\Game21Controller::play21post
+    methods: [POST]

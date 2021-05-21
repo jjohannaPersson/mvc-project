@@ -1,0 +1,50 @@
+{{ include('header.html.twig') }}
+
+<h1>{{ header }}</h1>
+
+<p>
+    Din poäng: {{ scores["human"] }}
+    <p class="dice-utf8">
+        {% for value in class %}
+            <i class=" {{ value }}"></i>
+        {% endfor %}
+    </p>
+    {% if scores["human"] == 21 %}
+        <h3>Grattis!</h3>
+    {% endif %}
+</p>
+<p>
+    Datorns poäng: {{ scores["computer"] }}
+</p>
+
+{% if roundIsOver == false %}
+    <form action="" method="POST">
+        <input name="roll" id="roll" type="submit" value="Kasta"></input>
+    </form>
+
+    <form action="" method="POST">
+        <input name="stay" id="stay" type="submit" value="Stanna"></input>
+    </form>
+{% else %}
+        <p><h3>Vinnaren är: {{ winner }}</h3></p>
+        <form action="" method="POST">
+            <input name="play-again" id="play-again" type="submit" value="Spela igen"></input>
+        </form>
+{% endif %}
+
+    <p>
+        Dina vunna rundor: {{ wonRounds["human"] }}
+    </p>
+    <p>
+        Datorns vunna rundor: {{ wonRounds["computer"] }}
+    </p>
+
+<form action="highscore/create" method="POST">
+    <input name="highscore" id="highscore" type="submit" value="Spara till HighScore"></input>
+</form>
+
+<form action="" method="POST">
+    <input name="new-game" id="new-game" type="submit" value="Nollställ poängen och starta en ny omgång"></input>
+</form>
+
+{{ include('footer.html.twig') }}

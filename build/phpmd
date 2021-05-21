@@ -1,0 +1,17 @@
+C:\Users\jjoha\dbwebb-kurser\mvc\me\orm\migrations\Version20210503124304.php:20	Avoid using short method names like Version20210503124304::up(). The configured minimum method name length is 3.
+C:\Users\jjoha\dbwebb-kurser\mvc\me\orm\migrations\Version20210503124304.php:20	Avoid using short method names like Version20210503124304::up(). The configured minimum method name length is 3.
+C:\Users\jjoha\dbwebb-kurser\mvc\me\orm\migrations\Version20210503124304.php:20	Avoid unused parameters such as '$schema'.
+C:\Users\jjoha\dbwebb-kurser\mvc\me\orm\migrations\Version20210503124304.php:26	Avoid unused parameters such as '$schema'.
+C:\Users\jjoha\dbwebb-kurser\mvc\me\orm\migrations\Version20210504074532.php:20	Avoid using short method names like Version20210504074532::up(). The configured minimum method name length is 3.
+C:\Users\jjoha\dbwebb-kurser\mvc\me\orm\migrations\Version20210504074532.php:20	Avoid using short method names like Version20210504074532::up(). The configured minimum method name length is 3.
+C:\Users\jjoha\dbwebb-kurser\mvc\me\orm\migrations\Version20210504074532.php:20	Avoid unused parameters such as '$schema'.
+C:\Users\jjoha\dbwebb-kurser\mvc\me\orm\migrations\Version20210504074532.php:30	Avoid unused parameters such as '$schema'.
+C:\Users\jjoha\dbwebb-kurser\mvc\me\orm\migrations\Version20210504081227.php:20	Avoid using short method names like Version20210504081227::up(). The configured minimum method name length is 3.
+C:\Users\jjoha\dbwebb-kurser\mvc\me\orm\migrations\Version20210504081227.php:20	Avoid using short method names like Version20210504081227::up(). The configured minimum method name length is 3.
+C:\Users\jjoha\dbwebb-kurser\mvc\me\orm\migrations\Version20210504081227.php:20	Avoid unused parameters such as '$schema'.
+C:\Users\jjoha\dbwebb-kurser\mvc\me\orm\migrations\Version20210504081227.php:31	Avoid unused parameters such as '$schema'.
+C:\Users\jjoha\dbwebb-kurser\mvc\me\orm\src\Entity\Book.php:18	Avoid variables with short names like $id. Configured minimum length is 3.
+C:\Users\jjoha\dbwebb-kurser\mvc\me\orm\src\Entity\HighScore.php:18	Avoid variables with short names like $id. Configured minimum length is 3.
+C:\Users\jjoha\dbwebb-kurser\mvc\me\orm\src\Game21\Game21.php:73	The method quitRound uses an else expression. Else clauses are basically not necessary and you can simplify the code by not using them.
+C:\Users\jjoha\dbwebb-kurser\mvc\me\orm\src\Kernel.php:14	Avoid assigning values to variables in if clauses and the like (line '22', column '27').
+C:\Users\jjoha\dbwebb-kurser\mvc\me\orm\src\Kernel.php:27	Avoid assigning values to variables in if clauses and the like (line '34', column '27').

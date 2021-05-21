@@ -1,0 +1,21 @@
+{{ include('header.html.twig') }}
+
+<h1>HighScore</h1>
+
+<p>HighScore över antal vunna rundor per omgång mot datorn: </p>
+
+<table class="book-table">
+    <tr>
+        <th>Plats</th>
+        <th>Antal vunna rundor</th>
+    </tr>
+    {% for score in highscore %}
+        <tr>
+            <td>{{ loop.index }}</td>
+            <td>{{ score.getScore() }}</td>
+        </tr>
+    {% endfor %}
+</table>
+
+
+{{ include('footer.html.twig') }}

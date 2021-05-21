@@ -1,0 +1,15 @@
+{{ include('header.html.twig') }}
+
+<h1>{{ header }}</h1>
+
+<p>{{ message }}</p>
+
+<form action="" method="POST">
+    <input type="radio" name="dices" id="dices" value="1">
+        <label for="dices">1</label><br>
+    <input type="radio" name="dices" id="dices" value="2">
+        <label for="dices">2</label><br>
+    <input name="start-game" id="start-game" type="submit" value="Börja spela!">
+</form>
+
+{{ include('footer.html.twig') }}

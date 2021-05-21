@@ -1,0 +1,22 @@
+{{ include('header.html.twig') }}
+
+<h1>{{ header }}</h1>
+
+<p>{{ message }}</p>
+
+<p>Dice!</p>
+
+<p>{{ dieLastRoll }}</p>
+
+<p>DiceHand!</p>
+
+<p>{{ diceHandRoll }}</p>
+
+<p>Graphic</p>
+<p class="dice-utf8">
+    {% for value in graphicDices %}
+        <i class=" {{ value }}"></i>
+    {% endfor %}
+</p>
+
+{{ include('footer.html.twig') }}
