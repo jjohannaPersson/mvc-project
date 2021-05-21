@@ -111,6 +111,34 @@ td a:hover {
     text-decoration: none;
 }
 
+.bitcoins {
+    padding-top: 2em;
+}
+
+.bitcoins h2 {
+    background-color: #6E857F;
+    text-align: center;
+    color: #EBCDAB;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    width: 50%;
+    margin: 0 auto;
+}
+
+.bitcoins h3 {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    width: 50%;
+    margin: 0 auto;
+}
+
+.bitcoin-form {
+    display: grid;
+    text-align: center;
+    width: 50%;
+    margin: 0 auto;
+}
+
 .footer {
     background-color: #6E857F;
     color: #EBCDAB;
