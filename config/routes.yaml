@@ -25,6 +25,16 @@ game21post:
     controller: App\Controller\Game21Controller::game21post
     methods: [POST]
 
+bitcoin:
+    path: /bitcoin
+    controller: App\Controller\Game21Controller::bitcoin
+    methods: [GET]
+
+bitcoinpost:
+    path: /bitcoin
+    controller: App\Controller\Game21Controller::bitcoinpost
+    methods: [POST]
+
 play21:
     path: /play21
     controller: App\Controller\Game21Controller::play21
