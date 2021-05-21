@@ -28,6 +28,8 @@ return [
     'dice' => [[], ['_controller' => 'App\\Controller\\DiceController::diceGame'], [], [['text', '/dice']], [], []],
     'game21' => [[], ['_controller' => 'App\\Controller\\Game21Controller::game21'], [], [['text', '/game21']], [], []],
     'game21post' => [[], ['_controller' => 'App\\Controller\\Game21Controller::game21post'], [], [['text', '/game21']], [], []],
+    'bitcoin' => [[], ['_controller' => 'App\\Controller\\Game21Controller::bitcoin'], [], [['text', '/bitcoin']], [], []],
+    'bitcoinpost' => [[], ['_controller' => 'App\\Controller\\Game21Controller::bitcoinpost'], [], [['text', '/bitcoin']], [], []],
     'play21' => [[], ['_controller' => 'App\\Controller\\Game21Controller::play21'], [], [['text', '/play21']], [], []],
     'play21post' => [[], ['_controller' => 'App\\Controller\\Game21Controller::play21post'], [], [['text', '/play21']], [], []],
 ];

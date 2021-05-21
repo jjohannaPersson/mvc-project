@@ -40,7 +40,7 @@ class __TwigTemplate_ebb2e8ee4f06f10b3b4cda8707a03e8d3ab8b84ca1f4753f87eff824f55
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "play21.html.twig"));
 
         // line 1
-        echo twig_include($this->env, $context, "/header.html.twig");
+        echo twig_include($this->env, $context, "header.html.twig");
         echo "
 
 <h1>";
@@ -48,18 +48,23 @@ class __TwigTemplate_ebb2e8ee4f06f10b3b4cda8707a03e8d3ab8b84ca1f4753f87eff824f55
         echo twig_escape_filter($this->env, (isset($context["header"]) || array_key_exists("header", $context) ? $context["header"] : (function () { throw new RuntimeError('Variable "header" does not exist.', 3, $this->source); })()), "html", null, true);
         echo "</h1>
 
+<h2>Du har bettat ";
+        // line 5
+        echo twig_escape_filter($this->env, (isset($context["betBitcoins"]) || array_key_exists("betBitcoins", $context) ? $context["betBitcoins"] : (function () { throw new RuntimeError('Variable "betBitcoins" does not exist.', 5, $this->source); })()), "html", null, true);
+        echo " bitcoins på att du vinner</h2>
+
 <p>
     Din poäng: ";
-        // line 6
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["scores"]) || array_key_exists("scores", $context) ? $context["scores"] : (function () { throw new RuntimeError('Variable "scores" does not exist.', 6, $this->source); })()), "human", [], "array", false, false, false, 6), "html", null, true);
+        // line 8
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["scores"]) || array_key_exists("scores", $context) ? $context["scores"] : (function () { throw new RuntimeError('Variable "scores" does not exist.', 8, $this->source); })()), "human", [], "array", false, false, false, 8), "html", null, true);
         echo "
     <p class=\"dice-utf8\">
         ";
-        // line 8
+        // line 10
         $context['_parent'] = $context;
-        $context['_seq'] = twig_ensure_traversable((isset($context["class"]) || array_key_exists("class", $context) ? $context["class"] : (function () { throw new RuntimeError('Variable "class" does not exist.', 8, $this->source); })()));
+        $context['_seq'] = twig_ensure_traversable((isset($context["class"]) || array_key_exists("class", $context) ? $context["class"] : (function () { throw new RuntimeError('Variable "class" does not exist.', 10, $this->source); })()));
         foreach ($context['_seq'] as $context["_key"] => $context["value"]) {
-            // line 9
+            // line 11
             echo "            <i class=\" ";
             echo twig_escape_filter($this->env, $context["value"], "html", null, true);
             echo "\"></i>
@@ -68,28 +73,28 @@ class __TwigTemplate_ebb2e8ee4f06f10b3b4cda8707a03e8d3ab8b84ca1f4753f87eff824f55
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['value'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 11
+        // line 13
         echo "    </p>
     ";
-        // line 12
-        if ((0 === twig_compare(twig_get_attribute($this->env, $this->source, (isset($context["scores"]) || array_key_exists("scores", $context) ? $context["scores"] : (function () { throw new RuntimeError('Variable "scores" does not exist.', 12, $this->source); })()), "human", [], "array", false, false, false, 12), 21))) {
-            // line 13
+        // line 14
+        if ((0 === twig_compare(twig_get_attribute($this->env, $this->source, (isset($context["scores"]) || array_key_exists("scores", $context) ? $context["scores"] : (function () { throw new RuntimeError('Variable "scores" does not exist.', 14, $this->source); })()), "human", [], "array", false, false, false, 14), 21))) {
+            // line 15
             echo "        <h3>Grattis!</h3>
     ";
         }
-        // line 15
+        // line 17
         echo "</p>
 <p>
     Datorns poäng: ";
-        // line 17
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["scores"]) || array_key_exists("scores", $context) ? $context["scores"] : (function () { throw new RuntimeError('Variable "scores" does not exist.', 17, $this->source); })()), "computer", [], "array", false, false, false, 17), "html", null, true);
+        // line 19
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["scores"]) || array_key_exists("scores", $context) ? $context["scores"] : (function () { throw new RuntimeError('Variable "scores" does not exist.', 19, $this->source); })()), "computer", [], "array", false, false, false, 19), "html", null, true);
         echo "
 </p>
 
 ";
-        // line 20
-        if ((0 === twig_compare((isset($context["roundIsOver"]) || array_key_exists("roundIsOver", $context) ? $context["roundIsOver"] : (function () { throw new RuntimeError('Variable "roundIsOver" does not exist.', 20, $this->source); })()), false))) {
-            // line 21
+        // line 22
+        if ((0 === twig_compare((isset($context["roundIsOver"]) || array_key_exists("roundIsOver", $context) ? $context["roundIsOver"] : (function () { throw new RuntimeError('Variable "roundIsOver" does not exist.', 22, $this->source); })()), false))) {
+            // line 23
             echo "    <form action=\"\" method=\"POST\">
         <input name=\"roll\" id=\"roll\" type=\"submit\" value=\"Kasta\"></input>
     </form>
@@ -99,27 +104,27 @@ class __TwigTemplate_ebb2e8ee4f06f10b3b4cda8707a03e8d3ab8b84ca1f4753f87eff824f55
     </form>
 ";
         } else {
-            // line 29
+            // line 31
             echo "        <p><h3>Vinnaren är: ";
-            echo twig_escape_filter($this->env, (isset($context["winner"]) || array_key_exists("winner", $context) ? $context["winner"] : (function () { throw new RuntimeError('Variable "winner" does not exist.', 29, $this->source); })()), "html", null, true);
+            echo twig_escape_filter($this->env, (isset($context["winner"]) || array_key_exists("winner", $context) ? $context["winner"] : (function () { throw new RuntimeError('Variable "winner" does not exist.', 31, $this->source); })()), "html", null, true);
             echo "</h3></p>
         <form action=\"\" method=\"POST\">
             <input name=\"play-again\" id=\"play-again\" type=\"submit\" value=\"Spela igen\"></input>
         </form>
 ";
         }
-        // line 34
+        // line 36
         echo "
     <p>
         Dina vunna rundor: ";
-        // line 36
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["wonRounds"]) || array_key_exists("wonRounds", $context) ? $context["wonRounds"] : (function () { throw new RuntimeError('Variable "wonRounds" does not exist.', 36, $this->source); })()), "human", [], "array", false, false, false, 36), "html", null, true);
+        // line 38
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["wonRounds"]) || array_key_exists("wonRounds", $context) ? $context["wonRounds"] : (function () { throw new RuntimeError('Variable "wonRounds" does not exist.', 38, $this->source); })()), "human", [], "array", false, false, false, 38), "html", null, true);
         echo "
     </p>
     <p>
         Datorns vunna rundor: ";
-        // line 39
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["wonRounds"]) || array_key_exists("wonRounds", $context) ? $context["wonRounds"] : (function () { throw new RuntimeError('Variable "wonRounds" does not exist.', 39, $this->source); })()), "computer", [], "array", false, false, false, 39), "html", null, true);
+        // line 41
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["wonRounds"]) || array_key_exists("wonRounds", $context) ? $context["wonRounds"] : (function () { throw new RuntimeError('Variable "wonRounds" does not exist.', 41, $this->source); })()), "computer", [], "array", false, false, false, 41), "html", null, true);
         echo "
     </p>
 
@@ -132,8 +137,8 @@ class __TwigTemplate_ebb2e8ee4f06f10b3b4cda8707a03e8d3ab8b84ca1f4753f87eff824f55
 </form>
 
 ";
-        // line 50
-        echo twig_include($this->env, $context, "/footer.html.twig");
+        // line 52
+        echo twig_include($this->env, $context, "footer.html.twig");
         echo "
 ";
         
@@ -156,14 +161,16 @@ class __TwigTemplate_ebb2e8ee4f06f10b3b4cda8707a03e8d3ab8b84ca1f4753f87eff824f55
 
     public function getDebugInfo()
     {
-        return array (  136 => 50,  122 => 39,  116 => 36,  112 => 34,  103 => 29,  93 => 21,  91 => 20,  85 => 17,  81 => 15,  77 => 13,  75 => 12,  72 => 11,  63 => 9,  59 => 8,  54 => 6,  48 => 3,  43 => 1,);
+        return array (  141 => 52,  127 => 41,  121 => 38,  117 => 36,  108 => 31,  98 => 23,  96 => 22,  90 => 19,  86 => 17,  82 => 15,  80 => 14,  77 => 13,  68 => 11,  64 => 10,  59 => 8,  53 => 5,  48 => 3,  43 => 1,);
     }
 
     public function getSourceContext()
     {
-        return new Source("{{ include('/header.html.twig') }}
+        return new Source("{{ include('header.html.twig') }}
 
 <h1>{{ header }}</h1>
+
+<h2>Du har bettat {{ betBitcoins }} bitcoins på att du vinner</h2>
 
 <p>
     Din poäng: {{ scores[\"human\"] }}
@@ -210,7 +217,7 @@ class __TwigTemplate_ebb2e8ee4f06f10b3b4cda8707a03e8d3ab8b84ca1f4753f87eff824f55
     <input name=\"new-game\" id=\"new-game\" type=\"submit\" value=\"Nollställ poängen och starta en ny omgång\"></input>
 </form>
 
-{{ include('/footer.html.twig') }}
-", "play21.html.twig", "C:\\Users\\jjoha\\dbwebb-kurser\\mvc\\me\\orm\\templates\\play21.html.twig");
+{{ include('footer.html.twig') }}
+", "play21.html.twig", "C:\\Users\\jjoha\\dbwebb-kurser\\mvc\\me\\proj\\templates\\play21.html.twig");
     }
 }

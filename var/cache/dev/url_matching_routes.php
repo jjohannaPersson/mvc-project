@@ -27,6 +27,10 @@ return [
             [['_route' => 'game21', '_controller' => 'App\\Controller\\Game21Controller::game21'], null, ['GET' => 0], null, false, false, null],
             [['_route' => 'game21post', '_controller' => 'App\\Controller\\Game21Controller::game21post'], null, ['POST' => 0], null, false, false, null],
         ],
+        '/bitcoin' => [
+            [['_route' => 'bitcoin', '_controller' => 'App\\Controller\\Game21Controller::bitcoin'], null, ['GET' => 0], null, false, false, null],
+            [['_route' => 'bitcoinpost', '_controller' => 'App\\Controller\\Game21Controller::bitcoinpost'], null, ['POST' => 0], null, false, false, null],
+        ],
         '/play21' => [
             [['_route' => 'play21', '_controller' => 'App\\Controller\\Game21Controller::play21'], null, ['GET' => 0], null, false, false, null],
             [['_route' => 'play21post', '_controller' => 'App\\Controller\\Game21Controller::play21post'], null, ['POST' => 0], null, false, false, null],
