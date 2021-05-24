@@ -22,6 +22,11 @@ class HighScore
      */
     public $score;
 
+    /**
+     * @ORM\Column(type="integer")
+     */
+    public $bitcoin;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -35,6 +40,18 @@ class HighScore
     public function setScore(int $score): self
     {
         $this->score = $score;
+
+        return $this;
+    }
+
+    public function getBitcoin(): ?int
+    {
+        return $this->bitcoin;
+    }
+
+    public function setBitcoin(int $bitcoin): self
+    {
+        $this->bitcoin = $bitcoin;
 
         return $this;
     }
