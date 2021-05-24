@@ -714,7 +714,6 @@ class XmlDriver extends FileDriver
      * @param SimpleXMLElement $joinColumnElement The XML element.
      *
      * @return mixed[] The mapping array.
-     *
      * @psalm-return array{
      *                   name: string,
      *                   referencedColumnName: string,
@@ -754,7 +753,6 @@ class XmlDriver extends FileDriver
       * Parses the given field as array.
       *
       * @return mixed[]
-      *
       * @psalm-return array{
       *                   fieldName: string,
       *                   type?: string,
@@ -822,7 +820,6 @@ class XmlDriver extends FileDriver
      * Parse / Normalize the cache configuration
      *
      * @return mixed[]
-     *
      * @psalm-return array{usage: mixed, region: string|null}
      */
     private function cacheToArray(SimpleXMLElement $cacheMapping)
@@ -850,7 +847,6 @@ class XmlDriver extends FileDriver
      * @param SimpleXMLElement $cascadeElement The cascade element.
      *
      * @return string[] The list of cascade options.
-     *
      * @psalm-return list<string>
      */
     private function getCascadeMappings(SimpleXMLElement $cascadeElement)
@@ -879,16 +875,19 @@ class XmlDriver extends FileDriver
 
         if (isset($xmlElement->entity)) {
             foreach ($xmlElement->entity as $entityElement) {
+                /** @psalm-var class-string */
                 $entityName          = (string) $entityElement['name'];
                 $result[$entityName] = $entityElement;
             }
         } elseif (isset($xmlElement->{'mapped-superclass'})) {
             foreach ($xmlElement->{'mapped-superclass'} as $mappedSuperClass) {
+                /** @psalm-var class-string */
                 $className          = (string) $mappedSuperClass['name'];
                 $result[$className] = $mappedSuperClass;
             }
         } elseif (isset($xmlElement->embeddable)) {
             foreach ($xmlElement->embeddable as $embeddableElement) {
+                /** @psalm-var class-string */
                 $embeddableName          = (string) $embeddableElement['name'];
                 $result[$embeddableName] = $embeddableElement;
             }

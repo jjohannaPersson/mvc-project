@@ -71,7 +71,6 @@ class ConvertDoctrine1Schema
      * Doctrine 1 schema.
      *
      * @return ClassMetadataInfo[] An array of ClassMetadataInfo instances
-     *
      * @psalm-return list<ClassMetadataInfo>
      */
     public function getMetadata()
@@ -203,7 +202,9 @@ class ConvertDoctrine1Schema
             throw ToolsException::couldNotMapDoctrine1Type($column['type']);
         }
 
-        $fieldMapping = [];
+        $fieldMapping = [
+            'nullable' => ! ($column['notnull'] ?? true), // Doctrine 1 columns are nullable by default
+        ];
 
         if (isset($column['primary'])) {
             $fieldMapping['id'] = true;
@@ -217,7 +218,7 @@ class ConvertDoctrine1Schema
             $fieldMapping['length'] = $column['length'];
         }
 
-        $allowed = ['precision', 'scale', 'unique', 'options', 'notnull', 'version'];
+        $allowed = ['precision', 'scale', 'unique', 'options', 'version'];
 
         foreach ($column as $key => $value) {
             if (in_array($key, $allowed)) {

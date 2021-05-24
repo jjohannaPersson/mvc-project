@@ -24,7 +24,7 @@ use Countable;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\DBAL\Cache\QueryCacheProfile;
-use Doctrine\DBAL\Driver\Statement;
+use Doctrine\DBAL\Driver\ResultStatement;
 use Doctrine\ORM\Cache\Logging\CacheLogger;
 use Doctrine\ORM\Cache\QueryCacheKey;
 use Doctrine\ORM\Cache\TimestampCacheKey;
@@ -123,7 +123,7 @@ abstract class AbstractQuery
      */
     protected $_hydrationMode = self::HYDRATE_OBJECT;
 
-    /** @var QueryCacheProfile */
+    /** @var QueryCacheProfile|null */
     protected $_queryCacheProfile;
 
     /**
@@ -289,7 +289,7 @@ abstract class AbstractQuery
     /**
      * Retrieves the associated EntityManager of this Query instance.
      *
-     * @return EntityManager
+     * @return EntityManagerInterface
      */
     public function getEntityManager()
     {
@@ -346,10 +346,9 @@ abstract class AbstractQuery
      * Sets a collection of query parameters.
      *
      * @param ArrayCollection|mixed[] $parameters
+     * @psalm-param ArrayCollection<int, Parameter>|mixed[] $parameters
      *
      * @return static This query instance.
-     *
-     * @psalm-param ArrayCollection<int, Parameter>|mixed[] $parameters
      */
     public function setParameters($parameters)
     {
@@ -402,10 +401,9 @@ abstract class AbstractQuery
      * @param mixed $value
      *
      * @return mixed[]|string|int|float|bool
+     * @psalm-return array|scalar
      *
      * @throws ORMInvalidArgumentException
-     *
-     * @psalm-return array|scalar
      */
     public function processParameterValue($value)
     {
@@ -593,6 +591,7 @@ abstract class AbstractQuery
      */
     public function setResultCacheDriver($resultCacheDriver = null)
     {
+        /** @phpstan-ignore-next-line */
         if ($resultCacheDriver !== null && ! ($resultCacheDriver instanceof \Doctrine\Common\Cache\Cache)) {
             throw ORMException::invalidResultCacheDriver();
         }
@@ -723,7 +722,7 @@ abstract class AbstractQuery
     }
 
     /**
-     * @return QueryCacheProfile
+     * @return QueryCacheProfile|null
      */
     public function getQueryCacheProfile()
     {
@@ -949,7 +948,7 @@ abstract class AbstractQuery
      * Executes the query and returns an IterableResult that can be used to incrementally
      * iterate over the result.
      *
-     * @deprecated
+     * @deprecated 2.8 Use {@see toIterable} instead. See https://github.com/doctrine/orm/issues/8463
      *
      * @param ArrayCollection|mixed[]|null $parameters    The query parameters.
      * @param string|int|null              $hydrationMode The hydration mode to use.
@@ -981,8 +980,8 @@ abstract class AbstractQuery
      * Executes the query and returns an iterable that can be used to incrementally
      * iterate over the result.
      *
-     * @param ArrayCollection|mixed[] $parameters    The query parameters.
-     * @param string|int|null         $hydrationMode The hydration mode to use.
+     * @param ArrayCollection|array|mixed[] $parameters    The query parameters.
+     * @param string|int|null               $hydrationMode The hydration mode to use.
      *
      * @return iterable<mixed>
      */
@@ -1045,7 +1044,7 @@ abstract class AbstractQuery
             $this->setParameters($parameters);
         }
 
-        $setCacheEntry = static function (): void {
+        $setCacheEntry = static function ($data): void {
         };
 
         if ($this->_hydrationCacheProfile !== null) {
@@ -1203,7 +1202,9 @@ abstract class AbstractQuery
     /**
      * Executes the query and returns a the resulting Statement object.
      *
-     * @return Statement The executed database statement that holds the results.
+     * @return ResultStatement|int The executed database statement that holds
+     *                             the results, or an integer indicating how
+     *                             many rows were affected.
      */
     abstract protected function _doExecute();
 

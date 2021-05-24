@@ -21,6 +21,7 @@
 namespace Doctrine\ORM;
 
 use BadMethodCallException;
+use Doctrine\Common\Cache\Psr6\CacheAdapter;
 use Doctrine\Common\EventManager;
 use Doctrine\Common\Util\ClassUtils;
 use Doctrine\DBAL\Connection;
@@ -47,6 +48,7 @@ use function is_callable;
 use function is_object;
 use function is_string;
 use function ltrim;
+use function method_exists;
 use function sprintf;
 use function trigger_error;
 
@@ -166,7 +168,14 @@ use const E_USER_DEPRECATED;
 
         $this->metadataFactory = new $metadataFactoryClassName();
         $this->metadataFactory->setEntityManager($this);
-        $this->metadataFactory->setCacheDriver($this->config->getMetadataCacheImpl());
+        $metadataCache = $this->config->getMetadataCacheImpl();
+        if ($metadataCache !== null) {
+            if (method_exists($this->metadataFactory, 'setCache')) {
+                $this->metadataFactory->setCache(CacheAdapter::wrap($metadataCache));
+            } else {
+                $this->metadataFactory->setCacheDriver($metadataCache);
+            }
+        }
 
         $this->repositoryFactory = $config->getRepositoryFactory();
         $this->unitOfWork        = new UnitOfWork($this);
@@ -284,9 +293,7 @@ use const E_USER_DEPRECATED;
      *
      * Internal note: Performance-sensitive method.
      *
-     * @param string $className
-     *
-     * @return ClassMetadata
+     * {@inheritDoc}
      */
     public function getClassMetadata($className)
     {
@@ -386,8 +393,10 @@ use const E_USER_DEPRECATED;
      *    during the search.
      * @param int|null $lockVersion The version of the entity to find when using
      * optimistic locking.
+     * @psalm-param class-string<T> $className
      *
      * @return object|null The entity instance or NULL if the entity can not be found.
+     * @psalm-return ?T
      *
      * @throws OptimisticLockException
      * @throws ORMInvalidArgumentException
@@ -395,8 +404,6 @@ use const E_USER_DEPRECATED;
      * @throws ORMException
      *
      * @template T
-     * @psalm-param class-string<T> $className
-     * @psalm-return ?T
      */
     public function find($className, $id, $lockMode = null, $lockVersion = null)
     {
@@ -746,12 +753,12 @@ use const E_USER_DEPRECATED;
      * Gets the repository for an entity class.
      *
      * @param string $entityName The name of the entity.
+     * @psalm-param class-string<T> $entityName
      *
      * @return ObjectRepository|EntityRepository The repository class.
+     * @psalm-return EntityRepository<T>
      *
      * @template T
-     * @psalm-param class-string<T> $entityName
-     * @psalm-return EntityRepository<T>
      */
     public function getRepository($entityName)
     {

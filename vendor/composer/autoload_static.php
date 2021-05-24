@@ -4,7 +4,7 @@
 
 namespace Composer\Autoload;
 
-class ComposerStaticInitd75070f1f06ebe199651f1bc8d80dd5d
+class ComposerStaticInit667cd3275bd0c93e69292947c78a7cc9
 {
     public static $files = array (
         '9b38cf48e83f5d8f60375221cd213eee' => __DIR__ . '/..' . '/phpstan/phpstan/bootstrap.php',
@@ -702,6 +702,7 @@ class ComposerStaticInitd75070f1f06ebe199651f1bc8d80dd5d
         'Doctrine\\Common\\Annotations\\IndexedReader' => __DIR__ . '/..' . '/doctrine/annotations/lib/Doctrine/Common/Annotations/IndexedReader.php',
         'Doctrine\\Common\\Annotations\\NamedArgumentConstructorAnnotation' => __DIR__ . '/..' . '/doctrine/annotations/lib/Doctrine/Common/Annotations/NamedArgumentConstructorAnnotation.php',
         'Doctrine\\Common\\Annotations\\PhpParser' => __DIR__ . '/..' . '/doctrine/annotations/lib/Doctrine/Common/Annotations/PhpParser.php',
+        'Doctrine\\Common\\Annotations\\PsrCachedReader' => __DIR__ . '/..' . '/doctrine/annotations/lib/Doctrine/Common/Annotations/PsrCachedReader.php',
         'Doctrine\\Common\\Annotations\\Reader' => __DIR__ . '/..' . '/doctrine/annotations/lib/Doctrine/Common/Annotations/Reader.php',
         'Doctrine\\Common\\Annotations\\SimpleAnnotationReader' => __DIR__ . '/..' . '/doctrine/annotations/lib/Doctrine/Common/Annotations/SimpleAnnotationReader.php',
         'Doctrine\\Common\\Annotations\\TokenParser' => __DIR__ . '/..' . '/doctrine/annotations/lib/Doctrine/Common/Annotations/TokenParser.php',
@@ -1686,6 +1687,7 @@ class ComposerStaticInitd75070f1f06ebe199651f1bc8d80dd5d
         'Doctrine\\Persistence\\Mapping\\Driver\\StaticPHPDriver' => __DIR__ . '/..' . '/doctrine/persistence/lib/Doctrine/Persistence/Mapping/Driver/StaticPHPDriver.php',
         'Doctrine\\Persistence\\Mapping\\Driver\\SymfonyFileLocator' => __DIR__ . '/..' . '/doctrine/persistence/lib/Doctrine/Persistence/Mapping/Driver/SymfonyFileLocator.php',
         'Doctrine\\Persistence\\Mapping\\MappingException' => __DIR__ . '/..' . '/doctrine/persistence/lib/Doctrine/Persistence/Mapping/MappingException.php',
+        'Doctrine\\Persistence\\Mapping\\ProxyClassNameResolver' => __DIR__ . '/..' . '/doctrine/persistence/lib/Doctrine/Persistence/Mapping/ProxyClassNameResolver.php',
         'Doctrine\\Persistence\\Mapping\\ReflectionService' => __DIR__ . '/..' . '/doctrine/persistence/lib/Doctrine/Persistence/Mapping/ReflectionService.php',
         'Doctrine\\Persistence\\Mapping\\RuntimeReflectionService' => __DIR__ . '/..' . '/doctrine/persistence/lib/Doctrine/Persistence/Mapping/RuntimeReflectionService.php',
         'Doctrine\\Persistence\\Mapping\\StaticReflectionService' => __DIR__ . '/..' . '/doctrine/persistence/lib/Doctrine/Persistence/Mapping/StaticReflectionService.php',
@@ -6129,9 +6131,9 @@ class ComposerStaticInitd75070f1f06ebe199651f1bc8d80dd5d
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
-            $loader->prefixLengthsPsr4 = ComposerStaticInitd75070f1f06ebe199651f1bc8d80dd5d::$prefixLengthsPsr4;
-            $loader->prefixDirsPsr4 = ComposerStaticInitd75070f1f06ebe199651f1bc8d80dd5d::$prefixDirsPsr4;
-            $loader->classMap = ComposerStaticInitd75070f1f06ebe199651f1bc8d80dd5d::$classMap;
+            $loader->prefixLengthsPsr4 = ComposerStaticInit667cd3275bd0c93e69292947c78a7cc9::$prefixLengthsPsr4;
+            $loader->prefixDirsPsr4 = ComposerStaticInit667cd3275bd0c93e69292947c78a7cc9::$prefixDirsPsr4;
+            $loader->classMap = ComposerStaticInit667cd3275bd0c93e69292947c78a7cc9::$classMap;
 
         }, null, ClassLoader::class);
     }

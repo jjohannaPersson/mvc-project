@@ -24,9 +24,9 @@ use Doctrine\Common\Collections\Criteria;
 use Doctrine\Common\Collections\Expr\Comparison;
 use Doctrine\Common\Util\ClassUtils;
 use Doctrine\DBAL\Connection;
+use Doctrine\DBAL\Driver\ResultStatement as DriverStatement;
 use Doctrine\DBAL\LockMode;
 use Doctrine\DBAL\Platforms\AbstractPlatform;
-use Doctrine\DBAL\Statement;
 use Doctrine\DBAL\Types\Type;
 use Doctrine\ORM\EntityManagerInterface;
 use Doctrine\ORM\Mapping\ClassMetadata;
@@ -362,7 +362,6 @@ class BasicEntityPersister implements EntityPersister
      * @param mixed[] $id
      *
      * @return int[]|null[]|string[]
-     *
      * @psalm-return list<(int|string|null)>
      */
     private function extractIdentifierTypes(array $id, ClassMetadata $versionedClass): array
@@ -611,7 +610,6 @@ class BasicEntityPersister implements EntityPersister
      * @param object $entity The entity for which to prepare the data.
      *
      * @return mixed[][] The prepared data.
-     *
      * @psalm-return array<string, array<array-key, mixed|null>>
      */
     protected function prepareUpdateData($entity)
@@ -703,7 +701,6 @@ class BasicEntityPersister implements EntityPersister
      * @param object $entity The entity for which to prepare the data.
      *
      * @return mixed[][] The prepared data for the tables to update.
-     *
      * @psalm-return array<string, mixed[]>
      */
     protected function prepareInsertData($entity)
@@ -922,8 +919,8 @@ class BasicEntityPersister implements EntityPersister
     /**
      * Loads an array of entities from a given DBAL statement.
      *
-     * @param mixed[]   $assoc
-     * @param Statement $stmt
+     * @param mixed[]         $assoc
+     * @param DriverStatement $stmt
      *
      * @return mixed[]
      */
@@ -944,7 +941,7 @@ class BasicEntityPersister implements EntityPersister
      * Hydrates a collection from a given DBAL statement.
      *
      * @param mixed[]              $assoc
-     * @param Statement            $stmt
+     * @param DriverStatement      $stmt
      * @param PersistentCollection $coll
      *
      * @return mixed[]
@@ -976,11 +973,11 @@ class BasicEntityPersister implements EntityPersister
     }
 
     /**
-     * @return \Doctrine\DBAL\Driver\Statement
+     * @psalm-param array<string, mixed> $assoc
+     *
+     * @return DriverStatement
      *
      * @throws MappingException
-     *
-     * @psalm-param array<string, mixed> $assoc
      */
     private function getManyToManyStatement(
         array $assoc,
@@ -1140,9 +1137,9 @@ class BasicEntityPersister implements EntityPersister
     /**
      * Gets the ORDER BY SQL snippet for ordered collections.
      *
-     * @throws ORMException
-     *
      * @psalm-param array<string, string> $orderBy
+     *
+     * @throws ORMException
      */
     final protected function getOrderBySQL(array $orderBy, string $baseTableAlias): string
     {
@@ -1350,9 +1347,9 @@ class BasicEntityPersister implements EntityPersister
      * Gets the SQL join fragment used when selecting entities from a
      * many-to-many association.
      *
-     * @return string
-     *
      * @psalm-param array<string, mixed> $manyToMany
+     *
+     * @return string
      */
     protected function getSelectManyToManyJoinSQL(array $manyToMany)
     {
@@ -1431,7 +1428,6 @@ class BasicEntityPersister implements EntityPersister
      * columns placed in the INSERT statements used by the persister.
      *
      * @return string[] The list of columns.
-     *
      * @psalm-return list<string>
      */
     protected function getInsertColumnList()
@@ -1661,13 +1657,12 @@ class BasicEntityPersister implements EntityPersister
      * Builds the left-hand-side of a where condition statement.
      *
      * @param string $field
+     * @psalm-param array<string, mixed>|null $assoc
      *
      * @return string[]
+     * @psalm-return list<string>
      *
      * @throws ORMException
-     *
-     * @psalm-param array<string, mixed>|null $assoc
-     * @psalm-return list<string>
      */
     private function getSelectConditionStatementColumnSQL($field, $assoc = null)
     {
@@ -1729,10 +1724,10 @@ class BasicEntityPersister implements EntityPersister
      * Subclasses are supposed to override this method if they intend to change
      * or alter the criteria by which entities are selected.
      *
-     * @return string
-     *
      * @psalm-param array<string, mixed> $criteria
      * @psalm-param array<string, mixed>|null $assoc
+     *
+     * @return string
      */
     protected function getSelectConditionSQL(array $criteria, $assoc = null)
     {
@@ -1773,10 +1768,9 @@ class BasicEntityPersister implements EntityPersister
      * @param object   $sourceEntity
      * @param int|null $offset
      * @param int|null $limit
-     *
-     * @return Statement
-     *
      * @psalm-param array<string, mixed> $assoc
+     *
+     * @return DriverStatement
      */
     private function getOneToManyStatement(array $assoc, $sourceEntity, $offset = null, $limit = null)
     {
@@ -1855,7 +1849,6 @@ class BasicEntityPersister implements EntityPersister
      *                             - class to which the field belongs to
      *
      * @return mixed[][]
-     *
      * @psalm-return array{0: array, 1: list<mixed>}
      */
     private function expandToManyParameters($criteria)
@@ -1882,10 +1875,9 @@ class BasicEntityPersister implements EntityPersister
      * @param mixed  $value
      *
      * @return int[]|null[]|string[]
+     * @psalm-return list<(int|string|null)>
      *
      * @throws QueryException
-     *
-     * @psalm-return list<(int|string|null)>
      */
     private function getTypes($field, $value, ClassMetadata $class)
     {
@@ -2020,9 +2012,9 @@ class BasicEntityPersister implements EntityPersister
     /**
      * Generates the appropriate join SQL for the given join column.
      *
-     * @return string LEFT JOIN if one of the columns is nullable, INNER JOIN otherwise.
-     *
      * @psalm-param array<array<string, mixed>> $joinColumns The join columns definition of an association.
+     *
+     * @return string LEFT JOIN if one of the columns is nullable, INNER JOIN otherwise.
      */
     protected function getJoinSQLForJoinColumns($joinColumns)
     {

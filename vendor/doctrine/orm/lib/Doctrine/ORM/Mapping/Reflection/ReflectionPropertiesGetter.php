@@ -51,10 +51,9 @@ final class ReflectionPropertiesGetter
 
     /**
      * @param string $className
+     * @psalm-param class-string $className
      *
      * @return ReflectionProperty[] indexed by property internal name
-     *
-     * @psalm-param class-string $className
      */
     public function getProperties($className)
     {
@@ -77,9 +76,9 @@ final class ReflectionPropertiesGetter
 
     /**
      * @param string $className
+     * @psalm-param class-string $className
      *
      * @return ReflectionClass[]
-     *
      * @psalm-return list<ReflectionClass>
      */
     private function getHierarchyClasses($className): array
@@ -104,7 +103,6 @@ final class ReflectionPropertiesGetter
 
     /**
      * @return ReflectionProperty[]
-     *
      * @psalm-return array<string, ReflectionProperty>
      */
     private function getClassProperties(ReflectionClass $reflectionClass): array
