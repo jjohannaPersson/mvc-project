@@ -2,17 +2,24 @@
 
 <h1>HighScore</h1>
 
-<p>HighScore över antal vunna rundor per omgång mot datorn: </p>
+<div class="highscore">
+    <h2>Sortera enligt</h2>
+
+    <a class="sort" href="./">Antal vunna rundor</a>
+    <a class="sort" href="highscore/bitcoins">Bitcoins</a>
+</div>
 
 <table class="book-table">
     <tr>
         <th>Plats</th>
         <th>Antal vunna rundor</th>
+        <th>Antal bitcoins</th>
     </tr>
     {% for score in highscore %}
         <tr>
             <td>{{ loop.index }}</td>
             <td>{{ score.getScore() }}</td>
+            <td>{{ score.getBitcoin() }}</td>
         </tr>
     {% endfor %}
 </table>
