@@ -16,10 +16,13 @@ return [
         '/book' => [[['_route' => 'book', '_controller' => 'App\\Controller\\BookController::index'], null, null, null, false, false, null]],
         '/book/create' => [[['_route' => 'create_book', '_controller' => 'App\\Controller\\BookController::createBook'], null, null, null, false, false, null]],
         '/allbooks' => [[['_route' => 'find_all_books', '_controller' => 'App\\Controller\\BookController::findAllBook'], null, null, null, false, false, null]],
-        '/hello' => [[['_route' => 'app_helloworld_hello', '_controller' => 'App\\Controller\\HelloWorldController::hello'], null, null, null, false, false, null]],
         '/high/score' => [[['_route' => 'high_score', '_controller' => 'App\\Controller\\HighScoreController::index'], null, null, null, false, false, null]],
         '/highscore/create' => [[['_route' => 'create_score', '_controller' => 'App\\Controller\\HighScoreController::createHighscore'], null, ['POST' => 0], null, false, false, null]],
-        '/highscore' => [[['_route' => 'highscore', '_controller' => 'App\\Controller\\HighScoreController::findAllHihgscore'], null, null, null, false, false, null]],
+        '/highscore' => [[['_route' => 'highscore', '_controller' => 'App\\Controller\\HighScoreController::findAllHighscore'], null, null, null, false, false, null]],
+        '/highscore/bitcoins' => [[['_route' => 'bitcoins', '_controller' => 'App\\Controller\\HighScoreController::findAllBitcoins'], null, null, null, false, false, null]],
+        '/histograms' => [[['_route' => 'histograms', '_controller' => 'App\\Controller\\HistogramController::index'], null, null, null, false, false, null]],
+        '/histogram/create' => [[['_route' => 'create_histogram', '_controller' => 'App\\Controller\\HistogramController::createHistogram'], null, null, null, false, false, null]],
+        '/histogram' => [[['_route' => 'histogram', '_controller' => 'App\\Controller\\HistogramController::findHistogram'], null, null, null, false, false, null]],
         '/hello-world' => [[['_route' => 'hello', '_controller' => 'App\\Controller\\HelloWorldController::helloMessage'], null, null, null, false, false, null]],
         '/' => [[['_route' => 'hello-view', '_controller' => 'App\\Controller\\HelloWorldController::helloMessageView'], null, null, null, false, false, null]],
         '/dice' => [[['_route' => 'dice', '_controller' => 'App\\Controller\\DiceController::diceGame'], null, ['GET' => 0], null, false, false, null]],
@@ -53,7 +56,6 @@ return [
                         .'|(*:159)'
                     .')'
                 .')'
-                .'|/hello/([^/]++)(*:184)'
             .')/?$}sDu',
     ],
     [ // $dynamicRoutes
@@ -63,9 +65,8 @@ return [
         116 => [[['_route' => '_profiler_router', '_controller' => 'web_profiler.controller.router::panelAction'], ['token'], null, null, false, false, null]],
         136 => [[['_route' => '_profiler_exception', '_controller' => 'web_profiler.controller.exception_panel::body'], ['token'], null, null, false, false, null]],
         149 => [[['_route' => '_profiler_exception_css', '_controller' => 'web_profiler.controller.exception_panel::stylesheet'], ['token'], null, null, false, false, null]],
-        159 => [[['_route' => '_profiler', '_controller' => 'web_profiler.controller.profiler::panelAction'], ['token'], null, null, false, true, null]],
-        184 => [
-            [['_route' => 'app_helloworld_hellowithargument', '_controller' => 'App\\Controller\\HelloWorldController::helloWithArgument'], ['message'], null, null, false, true, null],
+        159 => [
+            [['_route' => '_profiler', '_controller' => 'web_profiler.controller.profiler::panelAction'], ['token'], null, null, false, true, null],
             [null, null, null, null, false, false, 0],
         ],
     ],
