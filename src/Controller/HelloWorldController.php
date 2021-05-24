@@ -18,27 +18,7 @@ class HelloWorldController extends AbstractController
     public function helloMessageView(): Response
     {
         return $this->render('message.html.twig', [
-            'message' => "Hello World in view",
-        ]);
-    }
-
-    /**
-     * @Route("/hello")
-    */
-    public function hello(): Response
-    {
-        return $this->render('message.html.twig', [
-            'message' => "Hello World as controller annotation",
-        ]);
-    }
-
-    /**
-     * @Route("/hello/{message}")
-    */
-    public function helloWithArgument(string $message): Response
-    {
-        return $this->render('message.html.twig', [
-            'message' => $message,
+            'message' => "Denna sida är skapad i samband med ett slutprojekt i kursen MVC på Blekinge Tekniska Högskola. På denna sida kan du spela spelet Game 21, lycka till!",
         ]);
     }
 }
