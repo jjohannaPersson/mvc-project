@@ -1,0 +1,74 @@
+{{ include('header.html.twig') }}
+
+<h1>Histogram</h1>
+
+<p>Histogram över spelares vinnande poäng över 15</p>
+
+<div class="histogram">
+    <div class="histogram-row">15:
+        {% for points in histogram %}
+                {% for p in points.getPoints() %}
+                    {% if p == 15 %}
+                        <div class="dot"> </div>
+                    {% endif %}
+                {% endfor %}
+        {% endfor %}
+    </div>
+    <div class="histogram-row">16:
+        {% for points in histogram %}
+                {% for p in points.getPoints() %}
+                    {% if p == 16 %}
+                        <div class="dot"> </div>
+                    {% endif %}
+                {% endfor %}
+        {% endfor %}
+    </div>
+    <div class="histogram-row">17:
+        {% for points in histogram %}
+                {% for p in points.getPoints() %}
+                    {% if p == 17 %}
+                        <div class="dot"> </div>
+                    {% endif %}
+                {% endfor %}
+        {% endfor %}
+    </div>
+    <div class="histogram-row">18:
+        {% for points in histogram %}
+                {% for p in points.getPoints() %}
+                    {% if p == 18 %}
+                        <div class="dot"> </div>
+                    {% endif %}
+                {% endfor %}
+        {% endfor %}
+    </div>
+    <div class="histogram-row">19:
+        {% for points in histogram %}
+                {% for p in points.getPoints() %}
+                    {% if p == 19 %}
+                        <div class="dot"> </div>
+                    {% endif %}
+                {% endfor %}
+        {% endfor %}
+    </div>
+    <div class="histogram-row">20:
+        {% for points in histogram %}
+                {% for p in points.getPoints() %}
+                    {% if p == 20 %}
+                        <div class="dot"> </div>
+                    {% endif %}
+                {% endfor %}
+        {% endfor %}
+    </div>
+    <div class="histogram-row">21:
+        {% for points in histogram %}
+                {% for p in points.getPoints() %}
+                    {% if p == 21 %}
+                        <div class="dot"> </div>
+                    {% endif %}
+                {% endfor %}
+        {% endfor %}
+    </div>
+</div>
+
+
+{{ include('footer.html.twig') }}
