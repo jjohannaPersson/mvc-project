@@ -15,6 +15,7 @@ class Game21
     private $computerPlayer;
     private $roundEnded = false;
     private $bet;
+    private $histogram = array();
 
     public function __construct(int $dices = 1)
     {
@@ -92,16 +93,23 @@ class Game21
             $this->player->incrementWonRounds();
             $this->player->addBitcoins($this->bet * 2);
             $this->computerPlayer->removeBitcoins($this->bet);
+            array_push($this->histogram, $scores["human"]);
         } elseif ($scores["human"] < 22 && $scores["computer"] > 21) {
             $this->player->incrementWonRounds();
             $this->player->addBitcoins($this->bet * 2);
             $this->computerPlayer->removeBitcoins($this->bet);
+            array_push($this->histogram, $scores["human"]);
         } else {
             $this->computerPlayer->incrementWonRounds();
             $this->computerPlayer->addBitcoins($this->bet);
             $this->player->removeBitcoins($this->bet);
         }
         $this->roundEnded = true;
+    }
+
+    public function getHistogram(): array
+    {
+        return $this->histogram;
     }
 
     public function getWinner(): string
