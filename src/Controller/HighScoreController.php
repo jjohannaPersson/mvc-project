@@ -34,6 +34,7 @@ class HighScoreController extends AbstractController
 
         $highscore = new HighScore();
         $highscore->setScore($game21->getWonRounds()["human"]);
+        $highscore->setBitcoin($game21->getBitcoins()["human"]);
 
         // tell Doctrine you want to (eventually) save the Product (no queries yet)
         $entityManager->persist($highscore);
@@ -47,7 +48,7 @@ class HighScoreController extends AbstractController
     /**
      * @Route("/highscore", name="highscore")
      */
-    public function findAllHihgscore(
+    public function findAllHighscore(
         EntityManagerInterface $entityManager
     ): Response {
         $highscore = $entityManager
@@ -57,6 +58,28 @@ class HighScoreController extends AbstractController
         $scores = array();
         foreach ($highscore as $hs) {
             $scores[] = $hs->score;
+        }
+
+        array_multisort($scores, SORT_DESC, $highscore);
+
+        return $this->render('high_score/highscore.html.twig', [
+            "highscore" => $highscore,
+        ]);
+    }
+
+    /**
+     * @Route("/highscore/bitcoins", name="bitcoins")
+     */
+    public function findAllBitcoins(
+        EntityManagerInterface $entityManager
+    ): Response {
+        $highscore = $entityManager
+            ->getRepository(HighScore::class)
+            ->findAll();
+
+        $scores = array();
+        foreach ($highscore as $hs) {
+            $scores[] = $hs->bitcoin;
         }
 
         array_multisort($scores, SORT_DESC, $highscore);
