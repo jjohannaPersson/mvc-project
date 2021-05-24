@@ -50,7 +50,7 @@ class Game21Controller extends AbstractController
         return $this->render('bitcoin.html.twig', [
             "header" => "Game 21",
             "message" => "Välj hur många bitcoins du vill satsa, du kan som max satsa hälften av ditt innehav.",
-            "info" => "Om du vinner mot datorn så vinner du det dubbla som du har satsat. T.ex. om du satsar 5 bitcoins och vinner, då vinner du 20 bitcoins.",
+            "info" => "Om du vinner mot datorn så får du tillbaka det dubbla som du har satsat. T.ex. om du satsar 5 bitcoins och vinner, då vinner du 10 bitcoins.",
             "bitcoins" => $game21->getBitcoins(),
         ]);
     }
