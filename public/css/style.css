@@ -8,19 +8,21 @@ main {
     min-height: 20em;
     width: 800px;
     margin: 8px auto;
-    padding-bottom: 4em;
+    padding-bottom: 7em;
+    font-size: 20px;
 }
 
 .navbar {
     background-color: #6E857F;
-    padding: 1em;
+    padding: 3em;
     text-align: center;
 }
 
 .navbar a {
     text-decoration: none;
-    padding: 10px;
+    padding: 1em;;
     color: #EBCDAB;
+    font-size: 35px;
 }
 
 .navbar a:hover {
@@ -70,6 +72,27 @@ input[type=submit] {
     padding: 10px;
     cursor: pointer;
     margin-top: 5px;
+}
+
+.sort {
+    background-color: #6E857F;
+    color: #EBCDAB;
+    padding: 20px;
+    cursor: pointer;
+    margin-top: 5px;
+    text-decoration: none;
+    display: inline-block;
+    width: 150px;
+    border-radius: 10%;
+}
+
+.highscore a:hover {
+    text-decoration: underline;
+}
+
+.highscore {
+    text-align: center;
+    margin: 1em;
 }
 
 .game-table {
@@ -139,10 +162,37 @@ td a:hover {
     margin: 0 auto;
 }
 
+.histogram {
+    background-color: #6E857F;
+    color: #EBCDAB;
+    border-radius: 15%;
+    width: 50%;
+    margin: 0 auto;
+}
+
+.histogram-row {
+    display: flex;
+    padding: 1em;
+    margin-left: 40%;
+}
+
+.histogram-row .dot::after {
+    content: "\25CF";
+    margin-left: 1px;
+}
+
+.dices img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+    padding-top: 2em;
+}
+
 .footer {
     background-color: #6E857F;
     color: #EBCDAB;
-    height: 4em;
+    height: 7em;
     text-align: center;
     position: fixed;
     left: 0;
