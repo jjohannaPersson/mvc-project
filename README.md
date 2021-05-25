@@ -24,6 +24,11 @@ __Installera__
 
 Ladda ner Github-repot: [https://github.com/jjohannaPersson/mvc-project](https://github.com/jjohannaPersson/mvc-project)
 
+Kör kommandot:
+
+```
+make install
+```
 
 Johanna Persson\
 Student på BTH
