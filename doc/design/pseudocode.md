@@ -7,9 +7,13 @@ CHOOSE how many bitcoins you want to bet (max 50% of your holding)
 BUTTON 'SATSA' is pressed
 
 IF player wins
-    your bitcoins += betted bitcoins * 2
-    computed bitcoins -= betted bitcoins
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;your bitcoins += betted bitcoins * 2
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;computed bitcoins -= betted bitcoins
+
 ELSE
-    your bitcoins -= betted bitcoins
-    computed bitcoins += betted bitcoins
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;your bitcoins -= betted bitcoins
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;computed bitcoins += betted bitcoins
+
 ENDIF
