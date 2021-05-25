@@ -4,7 +4,7 @@
 [![Code Coverage](https://scrutinizer-ci.com/g/jjohannaPersson/mvc-project/badges/coverage.png?b=main)](https://scrutinizer-ci.com/g/jjohannaPersson/mvc-project/?branch=main)
 [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/jjohannaPersson/mvc-project/badges/quality-score.png?b=main)](https://scrutinizer-ci.com/g/jjohannaPersson/mvc-project/?branch=main)
 
-#Game21
+# Game21
 
 ![Dice](https://github.com/jjohannaPersson/mvc-project/blob/main/public/dices.png)
 
