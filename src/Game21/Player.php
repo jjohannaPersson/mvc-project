@@ -24,7 +24,6 @@ class Player
     public function bitcoins($bitcoins)
     {
         $this->currBitcoins = $bitcoins;
-
     }
 
     public function addBitcoins($bitcoins)
