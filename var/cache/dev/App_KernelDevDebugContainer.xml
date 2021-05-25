@@ -335,13 +335,6 @@
       <tag name="controller.service_arguments"/>
       <tag name="routing.route_loader"/>
     </service>
-    <service id="App\Controller\BookController" class="App\Controller\BookController" public="true" autowire="true" autoconfigure="true">
-      <tag name="controller.service_arguments"/>
-      <tag name="container.service_subscriber"/>
-      <call method="setContainer">
-        <argument type="service" id=".service_locator.5nX7ca3.App\Controller\BookController"/>
-      </call>
-    </service>
     <service id="App\Controller\DiceController" class="App\Controller\DiceController" public="true" autowire="true" autoconfigure="true">
       <tag name="controller.service_arguments"/>
       <tag name="container.service_subscriber"/>
@@ -382,10 +375,6 @@
     <service id="App\Dice\GraphicalDice" class="App\Dice\GraphicalDice" autowire="true" autoconfigure="true"/>
     <service id="App\Game21\Game21" class="App\Game21\Game21" autowire="true" autoconfigure="true"/>
     <service id="App\Game21\Player" class="App\Game21\Player" autowire="true" autoconfigure="true"/>
-    <service id="App\Repository\BookRepository" class="App\Repository\BookRepository" autowire="true" autoconfigure="true">
-      <tag name="doctrine.repository_service"/>
-      <argument type="service" id="doctrine"/>
-    </service>
     <service id="App\Repository\HighScoreRepository" class="App\Repository\HighScoreRepository" autowire="true" autoconfigure="true">
       <tag name="doctrine.repository_service"/>
       <argument type="service" id="doctrine"/>
@@ -4224,7 +4213,7 @@
       <factory class="Doctrine\ORM\EntityManager" method="create"/>
     </service>
     <service id="doctrine.orm.container_repository_factory" class="Doctrine\Bundle\DoctrineBundle\Repository\ContainerRepositoryFactory">
-      <argument type="service" id=".service_locator.1gnrYsW"/>
+      <argument type="service" id=".service_locator.iyRirE0"/>
     </service>
     <service id="doctrine.orm.manager_configurator.abstract" class="Doctrine\Bundle\DoctrineBundle\ManagerConfigurator" abstract="true">
       <argument type="collection"/>
@@ -5253,9 +5242,6 @@
         <argument key="_default" type="service_closure" id="webpack_encore.entrypoint_lookup[_default]"/>
       </argument>
     </service>
-    <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\BookController" class="App\Controller\BookController" autowire="true" abstract="true"/>
-    <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\BookController" class="App\Controller\BookController" autowire="true" abstract="true"/>
-    <service id=".abstract.instanceof.App\Controller\BookController" class="App\Controller\BookController" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\DiceController" class="App\Controller\DiceController" autowire="true" abstract="true"/>
     <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\DiceController" class="App\Controller\DiceController" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Controller\DiceController" class="App\Controller\DiceController" autowire="true" autoconfigure="true" abstract="true"/>
@@ -5271,8 +5257,6 @@
     <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\HistogramController" class="App\Controller\HistogramController" autowire="true" abstract="true"/>
     <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\HistogramController" class="App\Controller\HistogramController" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Controller\HistogramController" class="App\Controller\HistogramController" autowire="true" autoconfigure="true" abstract="true"/>
-    <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\BookRepository" class="App\Repository\BookRepository" autowire="true" abstract="true"/>
-    <service id=".abstract.instanceof.App\Repository\BookRepository" class="App\Repository\BookRepository" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\HighScoreRepository" class="App\Repository\HighScoreRepository" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Repository\HighScoreRepository" class="App\Repository\HighScoreRepository" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\HistogramRepository" class="App\Repository\HistogramRepository" autowire="true" abstract="true"/>
@@ -5597,10 +5581,9 @@
         <argument key="entityManager" type="service_closure" id="doctrine.orm.default_entity_manager"/>
       </argument>
     </service>
-    <service id=".service_locator.Ang9o5l" class="Symfony\Component\DependencyInjection\ServiceLocator">
+    <service id=".service_locator.GLXJBWW" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
-        <argument key="App\Controller\BookController::findAllBook" type="service_closure" id=".service_locator.l2QwsaZ"/>
         <argument key="App\Controller\HighScoreController::findAllBitcoins" type="service_closure" id=".service_locator.l2QwsaZ"/>
         <argument key="App\Controller\HighScoreController::findAllHighscore" type="service_closure" id=".service_locator.l2QwsaZ"/>
         <argument key="App\Controller\HistogramController::findHistogram" type="service_closure" id=".service_locator.l2QwsaZ"/>
@@ -5610,7 +5593,6 @@
         <argument key="kernel::loadRoutes" type="service_closure" id=".service_locator.KfbR3DY"/>
         <argument key="kernel::registerContainerConfiguration" type="service_closure" id=".service_locator.KfbR3DY"/>
         <argument key="kernel::terminate" type="service_closure" id=".service_locator.KfwZsne"/>
-        <argument key="App\Controller\BookController:findAllBook" type="service_closure" id=".service_locator.l2QwsaZ"/>
         <argument key="App\Controller\HighScoreController:findAllBitcoins" type="service_closure" id=".service_locator.l2QwsaZ"/>
         <argument key="App\Controller\HighScoreController:findAllHighscore" type="service_closure" id=".service_locator.l2QwsaZ"/>
         <argument key="App\Controller\HistogramController:findHistogram" type="service_closure" id=".service_locator.l2QwsaZ"/>
@@ -5849,10 +5831,9 @@
         <argument key="doctrine.orm.listeners.pdo_cache_adapter_doctrine_schema_subscriber" type="service_closure" id="doctrine.orm.listeners.pdo_cache_adapter_doctrine_schema_subscriber"/>
       </argument>
     </service>
-    <service id=".service_locator.1gnrYsW" class="Symfony\Component\DependencyInjection\ServiceLocator">
+    <service id=".service_locator.iyRirE0" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
-        <argument key="App\Repository\BookRepository" type="service_closure" id="App\Repository\BookRepository"/>
         <argument key="App\Repository\HighScoreRepository" type="service_closure" id="App\Repository\HighScoreRepository"/>
         <argument key="App\Repository\HistogramRepository" type="service_closure" id="App\Repository\HistogramRepository"/>
       </argument>
@@ -5918,12 +5899,6 @@
         <argument key="session" type="service_closure" id="session" on-invalid="ignore"/>
         <argument key="twig" type="service_closure" id="twig" on-invalid="ignore"/>
       </argument>
-    </service>
-    <service id=".service_locator.5nX7ca3.App\Controller\BookController" class="Symfony\Component\DependencyInjection\ServiceLocator">
-      <tag name="container.service_locator_context" id="App\Controller\BookController"/>
-      <argument>App\Controller\BookController</argument>
-      <argument type="service" id="service_container"/>
-      <factory service=".service_locator.5nX7ca3" method="withContext"/>
     </service>
     <service id=".service_locator.5nX7ca3.App\Controller\DiceController" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator_context" id="App\Controller\DiceController"/>
@@ -6120,12 +6095,12 @@
       <argument type="service" id="security.token_storage"/>
     </service>
     <service id="debug.argument_resolver.service.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\ServiceValueResolver">
-      <argument type="service" id=".service_locator.Ang9o5l"/>
+      <argument type="service" id=".service_locator.GLXJBWW"/>
     </service>
     <service id="debug.argument_resolver.default.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\DefaultValueResolver"/>
     <service id="debug.argument_resolver.variadic.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\VariadicValueResolver"/>
     <service id="debug.argument_resolver.not_tagged_controller.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\NotTaggedControllerValueResolver">
-      <argument type="service" id=".service_locator.Ang9o5l"/>
+      <argument type="service" id=".service_locator.GLXJBWW"/>
     </service>
     <service id=".debug.http_client.inner" class="Symfony\Contracts\HttpClient\HttpClientInterface">
       <argument type="collection"/>
@@ -6551,7 +6526,7 @@
     <service id="Symfony\WebpackEncoreBundle\Asset\EntrypointLookupInterface" alias="webpack_encore.entrypoint_lookup[_default]"/>
     <service id="container.env_var_processors_locator" alias=".service_locator.Kbr2i2X" public="true"/>
     <service id="twig.loader.filesystem" alias="twig.loader.native_filesystem"/>
-    <service id="argument_resolver.controller_locator" alias=".service_locator.Ang9o5l"/>
+    <service id="argument_resolver.controller_locator" alias=".service_locator.GLXJBWW"/>
     <service id="twig.loader" alias="twig.loader.native_filesystem"/>
     <service id="Psr\Log\LoggerInterface $requestLogger" alias="monolog.logger.request"/>
     <service id="Psr\Log\LoggerInterface $consoleLogger" alias="monolog.logger.console"/>

@@ -366,3 +366,6 @@ b1f21f,::1,POST,http://localhost:8080/dbwebb/mvc/me/proj/public/bitcoin,16218666
 fdfca7,::1,GET,http://localhost:8080/dbwebb/mvc/me/proj/public/histogram/create,1621866678,,302
 6071a3,::1,GET,http://localhost:8080/dbwebb/mvc/me/proj/public/histogram,1621866679,,200
 ce7b2f,::1,GET,http://localhost:8080/dbwebb/mvc/me/proj/public/,1621866700,,200
+090b7e,::1,GET,http://localhost:8080/dbwebb/mvc/me/proj/public/,1621929912,,200
+e2d620,::1,GET,http://localhost:8080/dbwebb/mvc/me/proj/public/,1621929912,,200
+610f94,::1,GET,http://localhost:8080/dbwebb/mvc/me/proj/public/highscore,1621929942,,200
