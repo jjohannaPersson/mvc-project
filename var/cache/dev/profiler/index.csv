@@ -1215,3 +1215,4 @@ c32bf2,::1,POST,http://localhost:8080/dbwebb/mvc/me/proj/public/bitcoin,16221211
 256a69,::1,POST,http://localhost:8080/dbwebb/mvc/me/proj/public/play21,1622121180,,302
 81aa11,::1,GET,http://localhost:8080/dbwebb/mvc/me/proj/public/game21,1622121181,,200
 baf62b,::1,GET,http://localhost:8080/dbwebb/mvc/me/proj/public/highscore,1622121184,,200
+448c91,::1,GET,http://localhost:8080/dbwebb/mvc/me/proj/public/,1622121651,,200

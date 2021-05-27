@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1622102129">
-  <project timestamp="1622102129">
+<coverage generated="1622121811">
+  <project timestamp="1622121811">
     <file name="C:\Users\jjoha\dbwebb-kurser\mvc\me\proj\src\Game21\Game21.php">
       <class name="App\Game21\Game21" namespace="global">
-        <metrics complexity="24" methods="16" coveredmethods="13" conditionals="0" coveredconditionals="0" statements="51" coveredstatements="46" elements="67" coveredelements="59"/>
+        <metrics complexity="24" methods="16" coveredmethods="13" conditionals="0" coveredconditionals="0" statements="54" coveredstatements="49" elements="70" coveredelements="62"/>
       </class>
       <line num="20" type="method" name="__construct" visibility="public" complexity="1" crap="1" count="10"/>
       <line num="22" type="stmt" count="10"/>
@@ -46,33 +46,36 @@
       <line num="94" type="stmt" count="1"/>
       <line num="95" type="stmt" count="1"/>
       <line num="96" type="stmt" count="1"/>
-      <line num="97" type="stmt" count="7"/>
-      <line num="98" type="stmt" count="1"/>
+      <line num="97" type="stmt" count="1"/>
+      <line num="98" type="stmt" count="7"/>
       <line num="99" type="stmt" count="1"/>
       <line num="100" type="stmt" count="1"/>
       <line num="101" type="stmt" count="1"/>
-      <line num="103" type="stmt" count="6"/>
-      <line num="104" type="stmt" count="6"/>
+      <line num="102" type="stmt" count="1"/>
+      <line num="103" type="stmt" count="1"/>
       <line num="105" type="stmt" count="6"/>
-      <line num="107" type="stmt" count="8"/>
-      <line num="108" type="stmt" count="8"/>
-      <line num="110" type="method" name="getHistogram" visibility="public" complexity="1" crap="1" count="1"/>
-      <line num="112" type="stmt" count="1"/>
-      <line num="115" type="method" name="getWinner" visibility="public" complexity="5" crap="5" count="3"/>
-      <line num="117" type="stmt" count="3"/>
-      <line num="118" type="stmt" count="3"/>
-      <line num="119" type="stmt" count="1"/>
-      <line num="120" type="stmt" count="2"/>
-      <line num="121" type="stmt" count="1"/>
+      <line num="106" type="stmt" count="6"/>
+      <line num="107" type="stmt" count="6"/>
+      <line num="108" type="stmt" count="6"/>
+      <line num="110" type="stmt" count="8"/>
+      <line num="111" type="stmt" count="8"/>
+      <line num="113" type="method" name="getHistogram" visibility="public" complexity="1" crap="1" count="1"/>
+      <line num="115" type="stmt" count="1"/>
+      <line num="118" type="method" name="getWinner" visibility="public" complexity="5" crap="5" count="3"/>
+      <line num="120" type="stmt" count="3"/>
+      <line num="121" type="stmt" count="3"/>
+      <line num="122" type="stmt" count="1"/>
+      <line num="123" type="stmt" count="2"/>
       <line num="124" type="stmt" count="1"/>
-      <line num="127" type="method" name="resetScores" visibility="public" complexity="1" crap="1" count="1"/>
-      <line num="129" type="stmt" count="1"/>
-      <line num="130" type="stmt" count="1"/>
-      <line num="131" type="stmt" count="1"/>
+      <line num="127" type="stmt" count="1"/>
+      <line num="130" type="method" name="resetScores" visibility="public" complexity="1" crap="1" count="1"/>
       <line num="132" type="stmt" count="1"/>
-      <line num="134" type="method" name="roundIsOver" visibility="public" complexity="1" crap="1" count="1"/>
-      <line num="136" type="stmt" count="1"/>
-      <metrics loc="138" ncloc="135" classes="1" methods="16" coveredmethods="13" conditionals="0" coveredconditionals="0" statements="51" coveredstatements="46" elements="67" coveredelements="59"/>
+      <line num="133" type="stmt" count="1"/>
+      <line num="134" type="stmt" count="1"/>
+      <line num="135" type="stmt" count="1"/>
+      <line num="137" type="method" name="roundIsOver" visibility="public" complexity="1" crap="1" count="1"/>
+      <line num="139" type="stmt" count="1"/>
+      <metrics loc="141" ncloc="138" classes="1" methods="16" coveredmethods="13" conditionals="0" coveredconditionals="0" statements="54" coveredstatements="49" elements="70" coveredelements="62"/>
     </file>
     <file name="C:\Users\jjoha\dbwebb-kurser\mvc\me\proj\src\Game21\Player.php">
       <class name="App\Game21\Player" namespace="global">
@@ -119,6 +122,6 @@
       <line num="91" type="stmt" count="1"/>
       <metrics loc="93" ncloc="90" classes="1" methods="13" coveredmethods="10" conditionals="0" coveredconditionals="0" statements="26" coveredstatements="19" elements="39" coveredelements="29"/>
     </file>
-    <metrics files="2" loc="231" ncloc="225" classes="2" methods="29" coveredmethods="23" conditionals="0" coveredconditionals="0" statements="77" coveredstatements="65" elements="106" coveredelements="88"/>
+    <metrics files="2" loc="234" ncloc="228" classes="2" methods="29" coveredmethods="23" conditionals="0" coveredconditionals="0" statements="80" coveredstatements="68" elements="109" coveredelements="91"/>
   </project>
 </coverage>

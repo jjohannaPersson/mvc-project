@@ -55,7 +55,7 @@ class HighScoreController extends AbstractController
 
         if (!$score) {
             throw $this->createNotFoundException(
-                'No product found for id '.$id
+                'No product found for id ' . $id
             );
         }
 
