@@ -91,18 +91,21 @@ class Game21
         $scores = $this->getScores();
         if ($scores["human"] > $scores["computer"] && $scores["human"] < 22) {
             $this->player->incrementWonRounds();
-            $this->player->addBitcoins($this->bet * 2);
+            $this->player->addBitcoins($this->bet);
             $this->computerPlayer->removeBitcoins($this->bet);
+            $this->histogram = array();
             array_push($this->histogram, $scores["human"]);
         } elseif ($scores["human"] < 22 && $scores["computer"] > 21) {
             $this->player->incrementWonRounds();
-            $this->player->addBitcoins($this->bet * 2);
+            $this->player->addBitcoins($this->bet);
             $this->computerPlayer->removeBitcoins($this->bet);
+            $this->histogram = array();
             array_push($this->histogram, $scores["human"]);
         } else {
             $this->computerPlayer->incrementWonRounds();
             $this->computerPlayer->addBitcoins($this->bet);
             $this->player->removeBitcoins($this->bet);
+            $this->histogram = array();
         }
         $this->roundEnded = true;
     }

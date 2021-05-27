@@ -3,6 +3,7 @@
 namespace App\Controller;
 
 use App\Entity\Histogram;
+use App\Repository\HistogramRepository;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
@@ -43,7 +44,29 @@ class HistogramController extends AbstractController
         $entityManager->flush();
 
         // return new Response('Saved new book with id ' . $book->getId());
-        return $this->redirect('../histogram');
+        return $this->redirect('../play21');
+    }
+
+    /**
+     * @Route("/histogram/edit/{id}")
+     */
+    public function update(int $id): Response
+    {
+        $entityManager = $this->getDoctrine()->getManager();
+        $score = $entityManager->getRepository(Histogram::class)->find($id);
+
+        if (!$score) {
+            throw $this->createNotFoundException(
+                'No product found for id '.$id
+            );
+        }
+
+        $entityManager->remove($score);
+        $entityManager->flush();
+
+        return $this->redirectToRoute('histogram', [
+            'id' => $score->getId()
+        ]);
     }
 
     /**

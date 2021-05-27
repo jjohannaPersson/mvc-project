@@ -1,7 +1,9 @@
 body {
     overflow-y: scroll;
-    background-color: #EBCDAB;
+    background-color: #395170;
     margin: 0 auto;
+    color: #EBCDAB;
+    font-family: 'Lato', sans-serif;
 }
 
 main {
@@ -9,28 +11,34 @@ main {
     width: 800px;
     margin: 8px auto;
     padding-bottom: 7em;
-    font-size: 20px;
+    font-size: 18px;
 }
 
 .navbar {
-    background-color: #6E857F;
+    background-color: #0f294a;
     padding: 3em;
     text-align: center;
 }
 
-.navbar a {
-    text-decoration: none;
-    padding: 1em;;
+.hov-effect {
+    transition: 0.3s ease;
     color: #EBCDAB;
     font-size: 35px;
+    text-decoration: none;
+    border-top: 4px solid #0f294a;
+    border-bottom: 4px solid #0f294a;
+    padding: 20px 0;
+    margin: 0 20px;
 }
-
-.navbar a:hover {
-    text-decoration: underline;
+.hov-effect:hover {
+    border-top: 4px solid #EBCDAB;
+    border-bottom: 4px solid #EBCDAB;
+    padding: 6px 0;
 }
 
 h1 {
     text-align: center;
+    color: #EBCDAB;
 }
 
 .dice-sprite {
@@ -63,31 +71,45 @@ label {
 }
 
 input[type=checkbox]:checked + label i {
-    border: 2px solid #6E857F;
+    border: 2px solid #0f294a;
 }
 
 input[type=submit] {
-    background-color: #6E857F;
+    background-color: #0f294a;
     color: #EBCDAB;
     padding: 10px;
     cursor: pointer;
     margin-top: 5px;
+    width: 50%;
 }
 
 .sort {
-    background-color: #6E857F;
+    background-color: #0f294a;
     color: #EBCDAB;
     padding: 20px;
     cursor: pointer;
     margin-top: 5px;
     text-decoration: none;
     display: inline-block;
-    width: 150px;
+    width: 250px;
     border-radius: 10%;
 }
 
+.highscore a {
+    font-size: 18px;
+    background-color: #0f294a;
+    transition: 0.3s ease;
+    color: #EBCDAB;
+    text-decoration: none;
+    border-top: 4px solid #0f294a;
+    border-bottom: 4px solid #0f294a;
+    padding: 20px 0;
+    margin: 0 20px;
+}
+
 .highscore a:hover {
-    text-decoration: underline;
+    border-top: 4px solid #EBCDAB;
+    border-bottom: 4px solid #EBCDAB;
 }
 
 .highscore {
@@ -102,7 +124,7 @@ input[type=submit] {
 }
 
 .game-table td, th {
-    border: 2px solid #6E857F;
+    border: 2px solid #0f294a;
     padding: 8px;
     width: 70px;
 }
@@ -122,12 +144,12 @@ input[type=submit] {
 }
 
 .book-table th {
-    background-color: #6E857F;
+    background-color: #0f294a;
     color: #EBCDAB;
 }
 
 td a {
-    color: #6E857F;
+    color: #0f294a;
 }
 
 td a:hover {
@@ -139,7 +161,7 @@ td a:hover {
 }
 
 .bitcoins h2 {
-    background-color: #6E857F;
+    background-color: #0f294a;
     text-align: center;
     color: #EBCDAB;
     padding-top: 10px;
@@ -162,8 +184,12 @@ td a:hover {
     margin: 0 auto;
 }
 
+.bitcoin-form input[type=submit] {
+    width: 100%;
+}
+
 .histogram {
-    background-color: #6E857F;
+    background-color: #0f294a;
     color: #EBCDAB;
     border-radius: 15%;
     width: 50%;
@@ -190,7 +216,7 @@ td a:hover {
 }
 
 .footer {
-    background-color: #6E857F;
+    background-color: #0f294a;
     color: #EBCDAB;
     height: 7em;
     text-align: center;

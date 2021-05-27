@@ -50,7 +50,7 @@ class Game21Controller extends AbstractController
         return $this->render('bitcoin.html.twig', [
             "header" => "Game 21",
             "message" => "Välj hur många bitcoins du vill satsa, du kan som max satsa hälften av ditt innehav.",
-            "info" => "Om du vinner mot datorn så får du tillbaka det dubbla som du har satsat. T.ex. om du satsar 5 bitcoins och vinner, då vinner du 10 bitcoins.",
+            "info" => "Om du vinner mot datorn så får du tillbaka det dubbla som du har satsat. T.ex. om du satsar 5 bitcoins och vinner, då får du tillbaka din 5 satsade bitcoins + 5 till.",
             "bitcoins" => $game21->getBitcoins(),
         ]);
     }
@@ -99,14 +99,16 @@ class Game21Controller extends AbstractController
             $tot = $game21->getScores()["human"];
             if ($tot === 21) {
                 $game21->quitRound();
+                return $this->redirect("histogram/create");
             } elseif ($tot > 21) {
                 $game21->quitRound();
+                return $this->redirect("histogram/create");
             }
             return $this->redirectToRoute('play21');
         } elseif (array_key_exists("stay", $_POST)) {
             $game21->computer();
             $game21->quitRound();
-            return $this->redirectToRoute('play21');
+            return $this->redirect("histogram/create");
         } elseif (array_key_exists("play-again", $_POST)) {
             $game21->resetScores();
             return $this->redirectToRoute('bitcoin');

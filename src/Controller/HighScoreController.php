@@ -46,6 +46,28 @@ class HighScoreController extends AbstractController
     }
 
     /**
+     * @Route("/highscore/edit/{id}")
+     */
+    public function update(int $id): Response
+    {
+        $entityManager = $this->getDoctrine()->getManager();
+        $score = $entityManager->getRepository(HighScore::class)->find($id);
+
+        if (!$score) {
+            throw $this->createNotFoundException(
+                'No product found for id '.$id
+            );
+        }
+
+        $entityManager->remove($score);
+        $entityManager->flush();
+
+        return $this->redirectToRoute('highscore', [
+            'id' => $score->getId()
+        ]);
+    }
+
+    /**
      * @Route("/highscore", name="highscore")
      */
     public function findAllHighscore(
