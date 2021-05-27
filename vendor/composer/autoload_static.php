@@ -4,7 +4,7 @@
 
 namespace Composer\Autoload;
 
-class ComposerStaticInit667cd3275bd0c93e69292947c78a7cc9
+class ComposerStaticInitef4cbc5d5570f4939552b01352b984db
 {
     public static $files = array (
         '9b38cf48e83f5d8f60375221cd213eee' => __DIR__ . '/..' . '/phpstan/phpstan/bootstrap.php',
@@ -581,21 +581,21 @@ class ComposerStaticInit667cd3275bd0c93e69292947c78a7cc9
     );
 
     public static $classMap = array (
-        'App\\Controller\\BookController' => __DIR__ . '/../..' . '/src/Controller/BookController.php',
         'App\\Controller\\DiceController' => __DIR__ . '/../..' . '/src/Controller/DiceController.php',
         'App\\Controller\\Game21Controller' => __DIR__ . '/../..' . '/src/Controller/Game21Controller.php',
         'App\\Controller\\HelloWorldController' => __DIR__ . '/../..' . '/src/Controller/HelloWorldController.php',
         'App\\Controller\\HighScoreController' => __DIR__ . '/../..' . '/src/Controller/HighScoreController.php',
+        'App\\Controller\\HistogramController' => __DIR__ . '/../..' . '/src/Controller/HistogramController.php',
         'App\\Dice\\Dice' => __DIR__ . '/../..' . '/src/Dice/Dice.php',
         'App\\Dice\\DiceHand' => __DIR__ . '/../..' . '/src/Dice/DiceHand.php',
         'App\\Dice\\GraphicalDice' => __DIR__ . '/../..' . '/src/Dice/GraphicalDice.php',
-        'App\\Entity\\Book' => __DIR__ . '/../..' . '/src/Entity/Book.php',
         'App\\Entity\\HighScore' => __DIR__ . '/../..' . '/src/Entity/HighScore.php',
+        'App\\Entity\\Histogram' => __DIR__ . '/../..' . '/src/Entity/Histogram.php',
         'App\\Game21\\Game21' => __DIR__ . '/../..' . '/src/Game21/Game21.php',
         'App\\Game21\\Player' => __DIR__ . '/../..' . '/src/Game21/Player.php',
         'App\\Kernel' => __DIR__ . '/../..' . '/src/Kernel.php',
-        'App\\Repository\\BookRepository' => __DIR__ . '/../..' . '/src/Repository/BookRepository.php',
         'App\\Repository\\HighScoreRepository' => __DIR__ . '/../..' . '/src/Repository/HighScoreRepository.php',
+        'App\\Repository\\HistogramRepository' => __DIR__ . '/../..' . '/src/Repository/HistogramRepository.php',
         'Attribute' => __DIR__ . '/..' . '/symfony/polyfill-php80/Resources/stubs/Attribute.php',
         'Collator' => __DIR__ . '/..' . '/symfony/intl/Resources/stubs/Collator.php',
         'Composer\\InstalledVersions' => __DIR__ . '/..' . '/composer/InstalledVersions.php',
@@ -706,41 +706,18 @@ class ComposerStaticInit667cd3275bd0c93e69292947c78a7cc9
         'Doctrine\\Common\\Annotations\\Reader' => __DIR__ . '/..' . '/doctrine/annotations/lib/Doctrine/Common/Annotations/Reader.php',
         'Doctrine\\Common\\Annotations\\SimpleAnnotationReader' => __DIR__ . '/..' . '/doctrine/annotations/lib/Doctrine/Common/Annotations/SimpleAnnotationReader.php',
         'Doctrine\\Common\\Annotations\\TokenParser' => __DIR__ . '/..' . '/doctrine/annotations/lib/Doctrine/Common/Annotations/TokenParser.php',
-        'Doctrine\\Common\\Cache\\ApcCache' => __DIR__ . '/..' . '/doctrine/cache/lib/Doctrine/Common/Cache/ApcCache.php',
-        'Doctrine\\Common\\Cache\\ApcuCache' => __DIR__ . '/..' . '/doctrine/cache/lib/Doctrine/Common/Cache/ApcuCache.php',
-        'Doctrine\\Common\\Cache\\ArrayCache' => __DIR__ . '/..' . '/doctrine/cache/lib/Doctrine/Common/Cache/ArrayCache.php',
         'Doctrine\\Common\\Cache\\Cache' => __DIR__ . '/..' . '/doctrine/cache/lib/Doctrine/Common/Cache/Cache.php',
         'Doctrine\\Common\\Cache\\CacheProvider' => __DIR__ . '/..' . '/doctrine/cache/lib/Doctrine/Common/Cache/CacheProvider.php',
-        'Doctrine\\Common\\Cache\\ChainCache' => __DIR__ . '/..' . '/doctrine/cache/lib/Doctrine/Common/Cache/ChainCache.php',
         'Doctrine\\Common\\Cache\\ClearableCache' => __DIR__ . '/..' . '/doctrine/cache/lib/Doctrine/Common/Cache/ClearableCache.php',
-        'Doctrine\\Common\\Cache\\CouchbaseBucketCache' => __DIR__ . '/..' . '/doctrine/cache/lib/Doctrine/Common/Cache/CouchbaseBucketCache.php',
-        'Doctrine\\Common\\Cache\\CouchbaseCache' => __DIR__ . '/..' . '/doctrine/cache/lib/Doctrine/Common/Cache/CouchbaseCache.php',
-        'Doctrine\\Common\\Cache\\ExtMongoDBCache' => __DIR__ . '/..' . '/doctrine/cache/lib/Doctrine/Common/Cache/ExtMongoDBCache.php',
-        'Doctrine\\Common\\Cache\\FileCache' => __DIR__ . '/..' . '/doctrine/cache/lib/Doctrine/Common/Cache/FileCache.php',
-        'Doctrine\\Common\\Cache\\FilesystemCache' => __DIR__ . '/..' . '/doctrine/cache/lib/Doctrine/Common/Cache/FilesystemCache.php',
         'Doctrine\\Common\\Cache\\FlushableCache' => __DIR__ . '/..' . '/doctrine/cache/lib/Doctrine/Common/Cache/FlushableCache.php',
-        'Doctrine\\Common\\Cache\\InvalidCacheId' => __DIR__ . '/..' . '/doctrine/cache/lib/Doctrine/Common/Cache/InvalidCacheId.php',
-        'Doctrine\\Common\\Cache\\LegacyMongoDBCache' => __DIR__ . '/..' . '/doctrine/cache/lib/Doctrine/Common/Cache/LegacyMongoDBCache.php',
-        'Doctrine\\Common\\Cache\\MemcacheCache' => __DIR__ . '/..' . '/doctrine/cache/lib/Doctrine/Common/Cache/MemcacheCache.php',
-        'Doctrine\\Common\\Cache\\MemcachedCache' => __DIR__ . '/..' . '/doctrine/cache/lib/Doctrine/Common/Cache/MemcachedCache.php',
-        'Doctrine\\Common\\Cache\\MongoDBCache' => __DIR__ . '/..' . '/doctrine/cache/lib/Doctrine/Common/Cache/MongoDBCache.php',
         'Doctrine\\Common\\Cache\\MultiDeleteCache' => __DIR__ . '/..' . '/doctrine/cache/lib/Doctrine/Common/Cache/MultiDeleteCache.php',
         'Doctrine\\Common\\Cache\\MultiGetCache' => __DIR__ . '/..' . '/doctrine/cache/lib/Doctrine/Common/Cache/MultiGetCache.php',
         'Doctrine\\Common\\Cache\\MultiOperationCache' => __DIR__ . '/..' . '/doctrine/cache/lib/Doctrine/Common/Cache/MultiOperationCache.php',
         'Doctrine\\Common\\Cache\\MultiPutCache' => __DIR__ . '/..' . '/doctrine/cache/lib/Doctrine/Common/Cache/MultiPutCache.php',
-        'Doctrine\\Common\\Cache\\PhpFileCache' => __DIR__ . '/..' . '/doctrine/cache/lib/Doctrine/Common/Cache/PhpFileCache.php',
-        'Doctrine\\Common\\Cache\\PredisCache' => __DIR__ . '/..' . '/doctrine/cache/lib/Doctrine/Common/Cache/PredisCache.php',
         'Doctrine\\Common\\Cache\\Psr6\\CacheAdapter' => __DIR__ . '/..' . '/doctrine/cache/lib/Doctrine/Common/Cache/Psr6/CacheAdapter.php',
         'Doctrine\\Common\\Cache\\Psr6\\CacheItem' => __DIR__ . '/..' . '/doctrine/cache/lib/Doctrine/Common/Cache/Psr6/CacheItem.php',
         'Doctrine\\Common\\Cache\\Psr6\\DoctrineProvider' => __DIR__ . '/..' . '/doctrine/cache/lib/Doctrine/Common/Cache/Psr6/DoctrineProvider.php',
         'Doctrine\\Common\\Cache\\Psr6\\InvalidArgument' => __DIR__ . '/..' . '/doctrine/cache/lib/Doctrine/Common/Cache/Psr6/InvalidArgument.php',
-        'Doctrine\\Common\\Cache\\RedisCache' => __DIR__ . '/..' . '/doctrine/cache/lib/Doctrine/Common/Cache/RedisCache.php',
-        'Doctrine\\Common\\Cache\\SQLite3Cache' => __DIR__ . '/..' . '/doctrine/cache/lib/Doctrine/Common/Cache/SQLite3Cache.php',
-        'Doctrine\\Common\\Cache\\Version' => __DIR__ . '/..' . '/doctrine/cache/lib/Doctrine/Common/Cache/Version.php',
-        'Doctrine\\Common\\Cache\\VoidCache' => __DIR__ . '/..' . '/doctrine/cache/lib/Doctrine/Common/Cache/VoidCache.php',
-        'Doctrine\\Common\\Cache\\WinCacheCache' => __DIR__ . '/..' . '/doctrine/cache/lib/Doctrine/Common/Cache/WinCacheCache.php',
-        'Doctrine\\Common\\Cache\\XcacheCache' => __DIR__ . '/..' . '/doctrine/cache/lib/Doctrine/Common/Cache/XcacheCache.php',
-        'Doctrine\\Common\\Cache\\ZendDataCache' => __DIR__ . '/..' . '/doctrine/cache/lib/Doctrine/Common/Cache/ZendDataCache.php',
         'Doctrine\\Common\\ClassLoader' => __DIR__ . '/..' . '/doctrine/common/lib/Doctrine/Common/ClassLoader.php',
         'Doctrine\\Common\\Collections\\AbstractLazyCollection' => __DIR__ . '/..' . '/doctrine/collections/lib/Doctrine/Common/Collections/AbstractLazyCollection.php',
         'Doctrine\\Common\\Collections\\ArrayCollection' => __DIR__ . '/..' . '/doctrine/collections/lib/Doctrine/Common/Collections/ArrayCollection.php',
@@ -1404,6 +1381,8 @@ class ComposerStaticInit667cd3275bd0c93e69292947c78a7cc9
         'Doctrine\\ORM\\Mapping\\DiscriminatorColumn' => __DIR__ . '/..' . '/doctrine/orm/lib/Doctrine/ORM/Mapping/DiscriminatorColumn.php',
         'Doctrine\\ORM\\Mapping\\DiscriminatorMap' => __DIR__ . '/..' . '/doctrine/orm/lib/Doctrine/ORM/Mapping/DiscriminatorMap.php',
         'Doctrine\\ORM\\Mapping\\Driver\\AnnotationDriver' => __DIR__ . '/..' . '/doctrine/orm/lib/Doctrine/ORM/Mapping/Driver/AnnotationDriver.php',
+        'Doctrine\\ORM\\Mapping\\Driver\\AttributeDriver' => __DIR__ . '/..' . '/doctrine/orm/lib/Doctrine/ORM/Mapping/Driver/AttributeDriver.php',
+        'Doctrine\\ORM\\Mapping\\Driver\\AttributeReader' => __DIR__ . '/..' . '/doctrine/orm/lib/Doctrine/ORM/Mapping/Driver/AttributeReader.php',
         'Doctrine\\ORM\\Mapping\\Driver\\DatabaseDriver' => __DIR__ . '/..' . '/doctrine/orm/lib/Doctrine/ORM/Mapping/Driver/DatabaseDriver.php',
         'Doctrine\\ORM\\Mapping\\Driver\\DriverChain' => __DIR__ . '/..' . '/doctrine/orm/lib/Doctrine/ORM/Mapping/Driver/DriverChain.php',
         'Doctrine\\ORM\\Mapping\\Driver\\PHPDriver' => __DIR__ . '/..' . '/doctrine/orm/lib/Doctrine/ORM/Mapping/Driver/PHPDriver.php',
@@ -1424,6 +1403,7 @@ class ComposerStaticInit667cd3275bd0c93e69292947c78a7cc9
         'Doctrine\\ORM\\Mapping\\Id' => __DIR__ . '/..' . '/doctrine/orm/lib/Doctrine/ORM/Mapping/Id.php',
         'Doctrine\\ORM\\Mapping\\Index' => __DIR__ . '/..' . '/doctrine/orm/lib/Doctrine/ORM/Mapping/Index.php',
         'Doctrine\\ORM\\Mapping\\InheritanceType' => __DIR__ . '/..' . '/doctrine/orm/lib/Doctrine/ORM/Mapping/InheritanceType.php',
+        'Doctrine\\ORM\\Mapping\\InverseJoinColumn' => __DIR__ . '/..' . '/doctrine/orm/lib/Doctrine/ORM/Mapping/InverseJoinColumn.php',
         'Doctrine\\ORM\\Mapping\\JoinColumn' => __DIR__ . '/..' . '/doctrine/orm/lib/Doctrine/ORM/Mapping/JoinColumn.php',
         'Doctrine\\ORM\\Mapping\\JoinColumns' => __DIR__ . '/..' . '/doctrine/orm/lib/Doctrine/ORM/Mapping/JoinColumns.php',
         'Doctrine\\ORM\\Mapping\\JoinTable' => __DIR__ . '/..' . '/doctrine/orm/lib/Doctrine/ORM/Mapping/JoinTable.php',
@@ -1590,6 +1570,7 @@ class ComposerStaticInit667cd3275bd0c93e69292947c78a7cc9
         'Doctrine\\ORM\\Query\\Expr\\Orx' => __DIR__ . '/..' . '/doctrine/orm/lib/Doctrine/ORM/Query/Expr/Orx.php',
         'Doctrine\\ORM\\Query\\Expr\\Select' => __DIR__ . '/..' . '/doctrine/orm/lib/Doctrine/ORM/Query/Expr/Select.php',
         'Doctrine\\ORM\\Query\\FilterCollection' => __DIR__ . '/..' . '/doctrine/orm/lib/Doctrine/ORM/Query/FilterCollection.php',
+        'Doctrine\\ORM\\Query\\Filter\\FilterException' => __DIR__ . '/..' . '/doctrine/orm/lib/Doctrine/ORM/Query/Filter/FilterException.php',
         'Doctrine\\ORM\\Query\\Filter\\SQLFilter' => __DIR__ . '/..' . '/doctrine/orm/lib/Doctrine/ORM/Query/Filter/SQLFilter.php',
         'Doctrine\\ORM\\Query\\Lexer' => __DIR__ . '/..' . '/doctrine/orm/lib/Doctrine/ORM/Query/Lexer.php',
         'Doctrine\\ORM\\Query\\Parameter' => __DIR__ . '/..' . '/doctrine/orm/lib/Doctrine/ORM/Query/Parameter.php',
@@ -1609,6 +1590,7 @@ class ComposerStaticInit667cd3275bd0c93e69292947c78a7cc9
         'Doctrine\\ORM\\Repository\\DefaultRepositoryFactory' => __DIR__ . '/..' . '/doctrine/orm/lib/Doctrine/ORM/Repository/DefaultRepositoryFactory.php',
         'Doctrine\\ORM\\Repository\\RepositoryFactory' => __DIR__ . '/..' . '/doctrine/orm/lib/Doctrine/ORM/Repository/RepositoryFactory.php',
         'Doctrine\\ORM\\Tools\\AttachEntityListenersListener' => __DIR__ . '/..' . '/doctrine/orm/lib/Doctrine/ORM/Tools/AttachEntityListenersListener.php',
+        'Doctrine\\ORM\\Tools\\Console\\Command\\AbstractEntityManagerCommand' => __DIR__ . '/..' . '/doctrine/orm/lib/Doctrine/ORM/Tools/Console/Command/AbstractEntityManagerCommand.php',
         'Doctrine\\ORM\\Tools\\Console\\Command\\ClearCache\\CollectionRegionCommand' => __DIR__ . '/..' . '/doctrine/orm/lib/Doctrine/ORM/Tools/Console/Command/ClearCache/CollectionRegionCommand.php',
         'Doctrine\\ORM\\Tools\\Console\\Command\\ClearCache\\EntityRegionCommand' => __DIR__ . '/..' . '/doctrine/orm/lib/Doctrine/ORM/Tools/Console/Command/ClearCache/EntityRegionCommand.php',
         'Doctrine\\ORM\\Tools\\Console\\Command\\ClearCache\\MetadataCommand' => __DIR__ . '/..' . '/doctrine/orm/lib/Doctrine/ORM/Tools/Console/Command/ClearCache/MetadataCommand.php',
@@ -1630,6 +1612,11 @@ class ComposerStaticInit667cd3275bd0c93e69292947c78a7cc9
         'Doctrine\\ORM\\Tools\\Console\\Command\\SchemaTool\\UpdateCommand' => __DIR__ . '/..' . '/doctrine/orm/lib/Doctrine/ORM/Tools/Console/Command/SchemaTool/UpdateCommand.php',
         'Doctrine\\ORM\\Tools\\Console\\Command\\ValidateSchemaCommand' => __DIR__ . '/..' . '/doctrine/orm/lib/Doctrine/ORM/Tools/Console/Command/ValidateSchemaCommand.php',
         'Doctrine\\ORM\\Tools\\Console\\ConsoleRunner' => __DIR__ . '/..' . '/doctrine/orm/lib/Doctrine/ORM/Tools/Console/ConsoleRunner.php',
+        'Doctrine\\ORM\\Tools\\Console\\EntityManagerProvider' => __DIR__ . '/..' . '/doctrine/orm/lib/Doctrine/ORM/Tools/Console/EntityManagerProvider.php',
+        'Doctrine\\ORM\\Tools\\Console\\EntityManagerProvider\\ConnectionFromManagerProvider' => __DIR__ . '/..' . '/doctrine/orm/lib/Doctrine/ORM/Tools/Console/EntityManagerProvider/ConnectionFromManagerProvider.php',
+        'Doctrine\\ORM\\Tools\\Console\\EntityManagerProvider\\HelperSetManagerProvider' => __DIR__ . '/..' . '/doctrine/orm/lib/Doctrine/ORM/Tools/Console/EntityManagerProvider/HelperSetManagerProvider.php',
+        'Doctrine\\ORM\\Tools\\Console\\EntityManagerProvider\\SingleManagerProvider' => __DIR__ . '/..' . '/doctrine/orm/lib/Doctrine/ORM/Tools/Console/EntityManagerProvider/SingleManagerProvider.php',
+        'Doctrine\\ORM\\Tools\\Console\\EntityManagerProvider\\UnknownManagerException' => __DIR__ . '/..' . '/doctrine/orm/lib/Doctrine/ORM/Tools/Console/EntityManagerProvider/UnknownManagerException.php',
         'Doctrine\\ORM\\Tools\\Console\\Helper\\EntityManagerHelper' => __DIR__ . '/..' . '/doctrine/orm/lib/Doctrine/ORM/Tools/Console/Helper/EntityManagerHelper.php',
         'Doctrine\\ORM\\Tools\\Console\\MetadataFilter' => __DIR__ . '/..' . '/doctrine/orm/lib/Doctrine/ORM/Tools/Console/MetadataFilter.php',
         'Doctrine\\ORM\\Tools\\ConvertDoctrine1Schema' => __DIR__ . '/..' . '/doctrine/orm/lib/Doctrine/ORM/Tools/ConvertDoctrine1Schema.php',
@@ -6131,9 +6118,9 @@ class ComposerStaticInit667cd3275bd0c93e69292947c78a7cc9
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
-            $loader->prefixLengthsPsr4 = ComposerStaticInit667cd3275bd0c93e69292947c78a7cc9::$prefixLengthsPsr4;
-            $loader->prefixDirsPsr4 = ComposerStaticInit667cd3275bd0c93e69292947c78a7cc9::$prefixDirsPsr4;
-            $loader->classMap = ComposerStaticInit667cd3275bd0c93e69292947c78a7cc9::$classMap;
+            $loader->prefixLengthsPsr4 = ComposerStaticInitef4cbc5d5570f4939552b01352b984db::$prefixLengthsPsr4;
+            $loader->prefixDirsPsr4 = ComposerStaticInitef4cbc5d5570f4939552b01352b984db::$prefixDirsPsr4;
+            $loader->classMap = ComposerStaticInitef4cbc5d5570f4939552b01352b984db::$classMap;
 
         }, null, ClassLoader::class);
     }

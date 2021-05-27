@@ -20,6 +20,7 @@
 
 namespace Doctrine\ORM\Mapping\Driver;
 
+use Doctrine\Deprecations\Deprecation;
 use Doctrine\ORM\Mapping\Builder\EntityListenerBuilder;
 use Doctrine\ORM\Mapping\ClassMetadata as Metadata;
 use Doctrine\ORM\Mapping\MappingException;
@@ -39,9 +40,6 @@ use function sprintf;
 use function strlen;
 use function strtoupper;
 use function substr;
-use function trigger_error;
-
-use const E_USER_DEPRECATED;
 
 /**
  * The YamlDriver reads the mapping metadata from yaml schema files.
@@ -57,9 +55,10 @@ class YamlDriver extends FileDriver
      */
     public function __construct($locator, $fileExtension = self::DEFAULT_FILE_EXTENSION)
     {
-        @trigger_error(
-            'YAML mapping driver is deprecated and will be removed in Doctrine ORM 3.0, please migrate to annotation or XML driver.',
-            E_USER_DEPRECATED
+        Deprecation::trigger(
+            'doctrine/orm',
+            'https://github.com/doctrine/orm/issues/8465',
+            'YAML mapping driver is deprecated and will be removed in Doctrine ORM 3.0, please migrate to annotation or XML driver.'
         );
 
         parent::__construct($locator, $fileExtension);
@@ -229,10 +228,35 @@ class YamlDriver extends FileDriver
                     $indexYml['name'] = $name;
                 }
 
-                if (is_string($indexYml['columns'])) {
-                    $index = ['columns' => array_map('trim', explode(',', $indexYml['columns']))];
-                } else {
-                    $index = ['columns' => $indexYml['columns']];
+                $index = [];
+
+                if (isset($indexYml['columns'])) {
+                    if (is_string($indexYml['columns'])) {
+                        $index['columns'] = array_map('trim', explode(',', $indexYml['columns']));
+                    } else {
+                        $index['columns'] = $indexYml['columns'];
+                    }
+                }
+
+                if (isset($indexYml['fields'])) {
+                    if (is_string($indexYml['fields'])) {
+                        $index['fields'] = array_map('trim', explode(',', $indexYml['fields']));
+                    } else {
+                        $index['fields'] = $indexYml['fields'];
+                    }
+                }
+
+                if (
+                    isset($index['columns'], $index['fields'])
+                    || (
+                        ! isset($index['columns'])
+                        && ! isset($index['fields'])
+                    )
+                ) {
+                    throw MappingException::invalidIndexConfiguration(
+                        $className,
+                        $indexYml['name']
+                    );
                 }
 
                 if (isset($indexYml['flags'])) {
@@ -258,10 +282,35 @@ class YamlDriver extends FileDriver
                     $uniqueYml['name'] = $name;
                 }
 
-                if (is_string($uniqueYml['columns'])) {
-                    $unique = ['columns' => array_map('trim', explode(',', $uniqueYml['columns']))];
-                } else {
-                    $unique = ['columns' => $uniqueYml['columns']];
+                $unique = [];
+
+                if (isset($uniqueYml['columns'])) {
+                    if (is_string($uniqueYml['columns'])) {
+                        $unique['columns'] = array_map('trim', explode(',', $uniqueYml['columns']));
+                    } else {
+                        $unique['columns'] = $uniqueYml['columns'];
+                    }
+                }
+
+                if (isset($uniqueYml['fields'])) {
+                    if (is_string($uniqueYml['fields'])) {
+                        $unique['fields'] = array_map('trim', explode(',', $uniqueYml['fields']));
+                    } else {
+                        $unique['fields'] = $uniqueYml['fields'];
+                    }
+                }
+
+                if (
+                    isset($unique['columns'], $unique['fields'])
+                    || (
+                        ! isset($unique['columns'])
+                        && ! isset($unique['fields'])
+                    )
+                ) {
+                    throw MappingException::invalidUniqueConstraintConfiguration(
+                        $className,
+                        $uniqueYml['name']
+                    );
                 }
 
                 if (isset($uniqueYml['options'])) {
@@ -371,7 +420,7 @@ class YamlDriver extends FileDriver
             foreach ($element['oneToOne'] as $name => $oneToOneElement) {
                 $mapping = [
                     'fieldName' => $name,
-                    'targetEntity' => $oneToOneElement['targetEntity'],
+                    'targetEntity' => $oneToOneElement['targetEntity'] ?? null,
                 ];
 
                 if (isset($associationIds[$mapping['fieldName']])) {
@@ -466,7 +515,7 @@ class YamlDriver extends FileDriver
             foreach ($element['manyToOne'] as $name => $manyToOneElement) {
                 $mapping = [
                     'fieldName' => $name,
-                    'targetEntity' => $manyToOneElement['targetEntity'],
+                    'targetEntity' => $manyToOneElement['targetEntity'] ?? null,
                 ];
 
                 if (isset($associationIds[$mapping['fieldName']])) {
@@ -763,8 +812,8 @@ class YamlDriver extends FileDriver
      * @psalm-return array{
      *                   fieldName: string,
      *                   type?: string,
-     *                   columnName?: mixed,
-     *                   length?: mixed,
+     *                   columnName?: string,
+     *                   length?: int,
      *                   precision?: mixed,
      *                   scale?: mixed,
      *                   unique?: bool,
@@ -833,11 +882,12 @@ class YamlDriver extends FileDriver
      *
      * @param mixed[] $cacheMapping
      * @psalm-param array{usage: mixed, region: (string|null)} $cacheMapping
+     * @psalm-param array{usage: string, region?: string} $cacheMapping
      *
      * @return mixed[]
-     * @psalm-return array{usage: mixed, region: (string|null)}
+     * @psalm-return array{usage: int, region: string|null}
      */
-    private function cacheToArray($cacheMapping)
+    private function cacheToArray(array $cacheMapping): array
     {
         $region = isset($cacheMapping['region']) ? (string) $cacheMapping['region'] : null;
         $usage  = isset($cacheMapping['usage']) ? strtoupper($cacheMapping['usage']) : null;
@@ -847,7 +897,7 @@ class YamlDriver extends FileDriver
         }
 
         if ($usage) {
-            $usage = constant('Doctrine\ORM\Mapping\ClassMetadata::CACHE_USAGE_' . $usage);
+            $usage = (int) constant('Doctrine\ORM\Mapping\ClassMetadata::CACHE_USAGE_' . $usage);
         }
 
         return [

@@ -6,7 +6,7 @@
     'aliases' => 
     array (
     ),
-    'reference' => '7565532f92188c18fbcdb7bdbfed9305c5f4599e',
+    'reference' => '2333bdf218aa7e33e00307a75d9db26a992830f0',
     'name' => 'dbwebb/mvc-ramverk',
   ),
   'versions' => 
@@ -27,7 +27,7 @@
       'aliases' => 
       array (
       ),
-      'reference' => '7565532f92188c18fbcdb7bdbfed9305c5f4599e',
+      'reference' => '2333bdf218aa7e33e00307a75d9db26a992830f0',
     ),
     'doctrine/annotations' => 
     array (
@@ -40,12 +40,12 @@
     ),
     'doctrine/cache' => 
     array (
-      'pretty_version' => '1.11.2',
-      'version' => '1.11.2.0',
+      'pretty_version' => '2.0.3',
+      'version' => '2.0.3.0',
       'aliases' => 
       array (
       ),
-      'reference' => '9c53086695937c50c47936ed86d96150ffbcf60d',
+      'reference' => 'c9622c6820d3ede1e2315a6a377ea1076e421d88',
     ),
     'doctrine/collections' => 
     array (
@@ -67,12 +67,12 @@
     ),
     'doctrine/dbal' => 
     array (
-      'pretty_version' => '2.13.1',
-      'version' => '2.13.1.0',
+      'pretty_version' => '2.13.x-dev',
+      'version' => '2.13.9999999.9999999-dev',
       'aliases' => 
       array (
       ),
-      'reference' => 'c800380457948e65bbd30ba92cc17cda108bf8c9',
+      'reference' => '2c193548ca5ba7b1d66c9590f079fb2240fd0302',
     ),
     'doctrine/deprecations' => 
     array (
@@ -148,12 +148,12 @@
     ),
     'doctrine/orm' => 
     array (
-      'pretty_version' => '2.8.5',
-      'version' => '2.8.5.0',
+      'pretty_version' => '2.9.1',
+      'version' => '2.9.1.0',
       'aliases' => 
       array (
       ),
-      'reference' => 'a6577b89a2b028b79550ef58d9f272debdd75da4',
+      'reference' => 'f3e55fae9fdbdbc23897006bdbf016c20e11f6e9',
     ),
     'doctrine/persistence' => 
     array (
@@ -184,12 +184,12 @@
     ),
     'friendsofphp/proxy-manager-lts' => 
     array (
-      'pretty_version' => 'v1.0.4',
-      'version' => '1.0.4.0',
+      'pretty_version' => 'v1.0.5',
+      'version' => '1.0.5.0',
       'aliases' => 
       array (
       ),
-      'reference' => '587bfddfd9847c1d0417c4cf07d1dbf19aa6d136',
+      'reference' => '006aa5d32f887a4db4353b13b5b5095613e0611f',
     ),
     'laminas/laminas-code' => 
     array (

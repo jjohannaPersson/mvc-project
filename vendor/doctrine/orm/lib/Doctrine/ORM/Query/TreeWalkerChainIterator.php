@@ -106,6 +106,8 @@ class TreeWalkerChainIterator implements Iterator, ArrayAccess
     }
 
     /**
+     * @psalm-param array-key|null $offset
+     *
      * @return TreeWalker|null
      */
     public function offsetGet($offset)
@@ -123,6 +125,9 @@ class TreeWalkerChainIterator implements Iterator, ArrayAccess
 
     /**
      * {@inheritdoc}
+     *
+     * @param string $value
+     * @psalm-param array-key|null $offset
      */
     public function offsetSet($offset, $value)
     {
