@@ -369,3 +369,15 @@ ce7b2f,::1,GET,http://localhost:8080/dbwebb/mvc/me/proj/public/,1621866700,,200
 090b7e,::1,GET,http://localhost:8080/dbwebb/mvc/me/proj/public/,1621929912,,200
 e2d620,::1,GET,http://localhost:8080/dbwebb/mvc/me/proj/public/,1621929912,,200
 610f94,::1,GET,http://localhost:8080/dbwebb/mvc/me/proj/public/highscore,1621929942,,200
+0579af,::1,GET,http://localhost:8080/dbwebb/mvc/me/proj/public/histogram/create,1621930449,,302
+882720,::1,GET,http://localhost:8080/dbwebb/mvc/me/proj/public/histogram,1621930450,,200
+7055b6,::1,GET,http://localhost:8080/dbwebb/mvc/me/proj/public/game21,1621930464,,200
+8681f0,::1,POST,http://localhost:8080/dbwebb/mvc/me/proj/public/game21,1621930467,,302
+7596cf,::1,GET,http://localhost:8080/dbwebb/mvc/me/proj/public/bitcoin,1621930468,,200
+b7f547,::1,GET,http://localhost:8080/dbwebb/mvc/me/proj/public/,1621931509,,200
+5e2f5e,::1,GET,http://localhost:8080/dbwebb/mvc/me/proj/public/,1621943396,,200
+05ee7a,::1,GET,http://localhost:8080/dbwebb/mvc/me/proj/public/highscore,1621943400,,200
+e17074,::1,GET,http://localhost:8080/dbwebb/mvc/me/proj/public/histogram/create,1621943459,,302
+099d70,::1,GET,http://localhost:8080/dbwebb/mvc/me/proj/public/histogram,1621943460,,200
+3a2513,::1,GET,http://localhost:8080/dbwebb/mvc/me/proj/public/game21,1621943466,,200
+693d87,::1,GET,http://localhost:8080/dbwebb/mvc/me/proj/public/game21,1622021401,,200
