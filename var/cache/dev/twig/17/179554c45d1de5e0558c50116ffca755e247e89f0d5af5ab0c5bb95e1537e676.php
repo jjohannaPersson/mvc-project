@@ -56,10 +56,10 @@ class __TwigTemplate_34bc718bb1b459d23ca8fa2ae1fe12f82f48f839aaf100b2cf714b8d07e
 
 <header>
     <nav class=\"navbar\">
-        <a href=\"./\">Home</a>
-        <a href=\"./game21\">Game 21</a>
-        <a href=\"./highscore\">HighScore</a>
-        <a href=\"./histogram/create\">Histogram</a>
+        <a class=\"hov-effect\" href=\"./\">Home</a>
+        <a class=\"hov-effect\" href=\"./game21\">Game 21</a>
+        <a class=\"hov-effect\" href=\"./highscore\">HighScore</a>
+        <a class=\"hov-effect\" href=\"./histogram\">Histogram</a>
     </nav>
 </header>
 <main>
@@ -102,10 +102,10 @@ class __TwigTemplate_34bc718bb1b459d23ca8fa2ae1fe12f82f48f839aaf100b2cf714b8d07e
 
 <header>
     <nav class=\"navbar\">
-        <a href=\"./\">Home</a>
-        <a href=\"./game21\">Game 21</a>
-        <a href=\"./highscore\">HighScore</a>
-        <a href=\"./histogram/create\">Histogram</a>
+        <a class=\"hov-effect\" href=\"./\">Home</a>
+        <a class=\"hov-effect\" href=\"./game21\">Game 21</a>
+        <a class=\"hov-effect\" href=\"./highscore\">HighScore</a>
+        <a class=\"hov-effect\" href=\"./histogram\">Histogram</a>
     </nav>
 </header>
 <main>

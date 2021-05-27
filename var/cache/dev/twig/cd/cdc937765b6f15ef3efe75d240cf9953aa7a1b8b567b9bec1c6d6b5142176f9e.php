@@ -48,7 +48,7 @@ class __TwigTemplate_cc8a8b9a0fc88d03dd864b8ef82b1f7bb99e867c45c35692b58f1d10115
 <div class=\"highscore\">
     <h2>Sortera enligt</h2>
 
-    <a class=\"sort\" href=\"./\">Antal vunna rundor</a>
+    <a class=\"sort\" href=\"./\">Vunna rundor</a>
     <a class=\"sort\" href=\"highscore/bitcoins\">Bitcoins</a>
 </div>
 
@@ -145,7 +145,7 @@ class __TwigTemplate_cc8a8b9a0fc88d03dd864b8ef82b1f7bb99e867c45c35692b58f1d10115
 <div class=\"highscore\">
     <h2>Sortera enligt</h2>
 
-    <a class=\"sort\" href=\"./\">Antal vunna rundor</a>
+    <a class=\"sort\" href=\"./\">Vunna rundor</a>
     <a class=\"sort\" href=\"highscore/bitcoins\">Bitcoins</a>
 </div>
 
