@@ -19,3 +19,4 @@ C:\Users\jjoha\dbwebb-kurser\mvc\me\proj\src\Entity\Histogram.php:18	Avoid varia
 C:\Users\jjoha\dbwebb-kurser\mvc\me\proj\src\Game21\Game21.php:102	The method quitRound uses an else expression. Else clauses are basically not necessary and you can simplify the code by not using them.
 C:\Users\jjoha\dbwebb-kurser\mvc\me\proj\src\Kernel.php:14	Avoid assigning values to variables in if clauses and the like (line '22', column '27').
 C:\Users\jjoha\dbwebb-kurser\mvc\me\proj\src\Kernel.php:27	Avoid assigning values to variables in if clauses and the like (line '34', column '27').
+C:\Users\jjoha\dbwebb-kurser\mvc\me\proj\test\Dice\DiceGame21Test.php:13	The class DiceGame21Test has 11 public methods. Consider refactoring DiceGame21Test to keep number of public methods under 10.
